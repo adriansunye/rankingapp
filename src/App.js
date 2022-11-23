@@ -1,11 +1,15 @@
 
 import './App.scss';
-import {Search} from '@components/layout/navigation/Search/Search';
+// import {Search} from '@components/layout/navigation/Search/Search';
+
+import PublicRoute  from '@components/router/PublicRoute/PublicRoute';
 
 function App() {
   return (
     <div className="App">
-      <Search/>
+      {/* <Search/> */}
+      {/* <Footer/> */}
+      <PublicRoute/>
     </div>
   );
 }
