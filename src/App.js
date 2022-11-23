@@ -1,11 +1,18 @@
 
 import './App.scss';
-import {Search} from '@components/layout/navigation/Search/Search';
+import Navbar from "./components/layout/navigation/NavBar/Navbar";
+
+
+/* import styled from 'styled-components';
+
+/* import {Search} from '@components/layout/navigation/Search/Search'; */
 
 function App() {
   return (
-    <div className="App">
-      <Search/>
+    <div className = "App">
+   
+       <Navbar/>
+     
     </div>
   );
 }
