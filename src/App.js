@@ -1,11 +1,11 @@
 
 import './App.scss';
-import {Search} from '@components/layout/navigation/Search/Search';
+import FilterButtons from './components/layout/organization/filterButtons/FilterButtons';
 
 function App() {
   return (
     <div className="App">
-      <Search/>
+      <FilterButtons/>
     </div>
   );
 }
