@@ -1,4 +1,5 @@
 
+import PublicRoute from '@components/routing/PublicRoute/PublicRoute';
 import './App.scss';
 import Navbar from "./components/layout/navigation/NavBar/Navbar";
 
