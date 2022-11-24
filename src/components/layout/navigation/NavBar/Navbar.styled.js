@@ -1,5 +1,6 @@
 
 import styled from "styled-components" ;
+import {colorVariables} from "../../../../utils/variables";
 /* import {Link} from "react-route-dom"; */
 
 
@@ -35,25 +36,33 @@ display: flex;
 export const NavbarLinkContainer = styled.div `
 display: flex;
 `;
-export const NavbarLink= styled.div ` //(Link)
-color: #7273DD;
+export const NavbarLink = styled.div `
+color: ${colorVariables.lila};
 font-family: ‘Mulish’, sans-serif;
-font-size: 1.5rem;
+font-size: 16px;
 text-decoration: none;
 margin: 8px;
+&:hover,
+&:focus{
+    color: ${colorVariables.rosa};
+};
 @media (max-width:700px) {display: none} ;
 `;
 
-export const NavbarLinkExtended = styled.div ` //(Link)
-color: #7273DD;
+export const NavbarLinkExtended = styled.div` 
+color: ${colorVariables.lila};
 font-family: ‘Mulish’, sans-serif;
-font-size: 1.5rem;
+font-size: 16px;
 text-decoration: none;
 margin: 8px;
+&:hover,
+&:focus{
+    color: ${colorVariables.rosa};
+};
 `;
 
 export const Logo = styled.img `
-margin-top:28px;
+margin-top:15px;
 
 max-width: 200px;
 height: auto;
@@ -63,16 +72,22 @@ height: auto;
  height:50px;
  background: none;
  border: none;
- color:#7273DD;
- font-size:45px;
+ color: ${colorVariables.lila};
+ font-size:2rem;
  padding:0;
   cursor: pointer;
   @media (min-width:700px) {display: none} ;
+  &:hover,
+&:focus{
+    color: ${colorVariables.rosa};
+
+};
  `;
 export const NavbarExtendedContainer = styled.div `
 display: flex;
 flex-direction: column;
 align-items:center;
+
 @media (min-width: 700px) {
     display: none;
 };
