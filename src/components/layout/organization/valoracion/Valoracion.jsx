@@ -3,18 +3,27 @@ import styled from 'styled-components'
 import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
 import Form from 'react-bootstrap/Form';
-import Estrellas from '../estrellas/Estrellas';
+import Estrellas from '@components/layout/organization/estrellas/Estrellas';
+import { colorVariables } from '@utils/variables.js'
 
 
 
 const ModalValoracion = styled(Modal)`
 .btn-primary{
-background: #7273DD;
-border: #7273DD;
+background: ${colorVariables.lila};
+border: ${colorVariables.lila};
 border-radius: 1rem;
 padding: .5rem 2rem;
-font-weight: ;
+font-weight: 600;
+
+&:hover{
+  
 }
+
+}
+
+
+
 `
 
 
