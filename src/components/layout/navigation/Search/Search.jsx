@@ -1,6 +1,5 @@
 
 import { useState, useEffect } from "react";
-import Apps from "@store/objects/appsEs"
 import { Card } from "react-bootstrap"
 import { Link } from "react-router-dom"
 
@@ -11,19 +10,13 @@ function Search() {
     useEffect(() => {
         localStorage.setItem("userSearch", JSON.stringify(searchString));
         if (searchString.length === 0) {
-            setSearchedObject(Apps.data.apps.sort((a, b) => (a.app_name > b.app_name) ? 1 : -1))
+            setSearchedObject(JSON.parse(localStorage.getItem("data")).sort((a, b) => (a.app_name > b.app_name) ? 1 : -1));
+            localStorage.setItem("lastSearch", JSON.stringify(searchedObject))
         } else {
             const searchedObjects = []
-            /*Apps.data.apps.forEach((item) => {
-                Object.values(item).every((onlyValues) => {
-                    if (onlyValues.toLowerCase().includes(searchString.toLowerCase())) {
-                        searchedObjects.push(item)
-                    }
-                })
-            })*/
             
             /* Filtering the data and pushing the filtered data to searchedObjects. */
-            Apps.data.apps.filter(obj => {
+            JSON.parse(localStorage.getItem("data")).filter(obj => {
                 if (obj.app_name.toLowerCase().includes(searchString.toLowerCase()) || 
                     obj.app_description.toLowerCase().includes(searchString.toLowerCase()) || 
                         obj.app_category.toLowerCase().includes(searchString.toLowerCase())) {
@@ -32,8 +25,12 @@ function Search() {
                     }
                 }
             })
+            
             setSearchedObject(searchedObjects.sort((a, b) => (a.app_name > b.app_name) ? 1 : -1))
-            localStorage.setItem("lastSearch", JSON.stringify(searchedObject));
+            
+            searchedObjects.length === 0 
+                ? localStorage.setItem("lastSearch", "No matches found") 
+                    : localStorage.setItem("lastSearch", JSON.stringify(searchedObject));
         }
     }, [searchString])
     const placeholderImage =
@@ -45,7 +42,7 @@ function Search() {
     //try for of function
     return (
         <>
-            <div className="fixed-top">
+            <div className="fixed-top container mt-2">
                 <input
                     className="form-control"
                     placeholder='Search...'
@@ -55,33 +52,35 @@ function Search() {
             <pre>
                 <div className="container mt-5 overflow-auto">
                     <div className="row g-2" >
-                        {Object.entries(searchedObject).map(([key]) =>
-                        <Link to={{
-                            pathname: "/detail:" + searchedObject[key].app_id,
-                        }}
-                        onClick={(e) => localStorage.setItem("clikedItem", JSON.stringify(searchedObject[key]))}
-                        >
-                            <Card key={searchedObject[key].app_id}>
-                                <div className="row g-0">
-                                    <div className="col-2">
-                                        <img
-                                            src={searchedObject[key].app_icon ? searchedObject[key].app_icon : placeholderImage}
-                                            alt="logo"
-                                            onError={onImageError}
-                                            className="img-fluid"
-                                        />
+                        {searchedObject.length !== 0 
+                            ? Object.entries(searchedObject).map(([key]) =>
+                            <Link to={{
+                                pathname: "/detail:" + searchedObject[key].app_id,
+                            }}
+                            onClick={(e) => localStorage.setItem("clikedItem", JSON.stringify(searchedObject[key]))}
+                            >
+                                <Card key={searchedObject[key].app_id}>
+                                    <div className="row g-0">
+                                        <div className="col-2">
+                                            <img
+                                                src={searchedObject[key].app_icon ? searchedObject[key].app_icon : placeholderImage}
+                                                alt="logo"
+                                                onError={onImageError}
+                                                className="img-fluid rounded-start"
+                                            />
+                                        </div>
+                                        <div className="col-10">
+                                            <Card.Body>
+                                            <h6>{searchedObject[key].app_name}</h6>
+                                                <Card.Text>{searchedObject[key].app_category}</Card.Text>
+                                                <Card.Text>{searchedObject[key].app_rating}</Card.Text>
+                                            </Card.Body>
+                                        </div>
                                     </div>
-                                    <div className="col-10">
-                                        <Card.Body>
-                                        <h6>{searchedObject[key].app_name}</h6>
-                                            <Card.Text>{searchedObject[key].app_category}</Card.Text>
-                                            <Card.Text>{searchedObject[key].app_rating}</Card.Text>
-                                        </Card.Body>
-                                    </div>
-                                </div>
-                            </Card>
+                                </Card>
                             </Link>
-                        )}
+                        )
+                        : <div className="d-flex align-items-center justify-content-center mt-5">No coincedences found</div>}
                     </div>
                 </div>
             </pre>
