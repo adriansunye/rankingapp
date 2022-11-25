@@ -2,26 +2,34 @@ import React from 'react';
 import {Link} from 'react-router-dom';
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
+import { FooterStyle, FooterContainer } from './Footer_styled';
+import { Icons} from './Footer_styled';
 
-import Facebook from '@src/assets/logosSVG/footer/Facebook';
-        
+
+import {ReactComponent as Twitter} from '@assets/logosSVG/imgFooter/mdi_twitter.svg';    
+import {ReactComponent as Facebook} from '@assets/logosSVG/imgFooter/Facebook.svg';     
+import {ReactComponent as Instagram} from '@assets/logosSVG/imgFooter/Instagram.svg'; 
+
+
     function Footer() {
         return (
 
-            <footer>     
+            <FooterContainer>     
                 
-                <Container>
-                
-                <Nav className="me-auto">
-                    <div className='nav-link'> © ARCO.APPS  2022. </div>
-                    <div className='nav-link'> Follow As:</div>
-                    <Nav.Link as={Link} to="#twitter"> <img src={Facebook} alt="facebook"/></Nav.Link>
-                    <Nav.Link as={Link} to="#facebook">Pricing</Nav.Link>
-                    <Nav.Link as={Link} to="#instagram">Pricing</Nav.Link>
-                </Nav>
+                <Container>                
+                <FooterStyle className="me-auto justify-content-around flex-nowrap">
+                    <div className='nav-link '> © ARCO.APPS  2022. </div>
+                    
+                    <Icons>                    
+                        <div className='nav-link'> Follow As:</div>
+                        <Nav.Link as={Link} to="twitter"> <Twitter/></Nav.Link>
+                        <Nav.Link as={Link} to="facebook"> <Facebook/> </Nav.Link>
+                        <Nav.Link as={Link} to="instagram"> <Instagram/> </Nav.Link>
+                    </Icons>
+                </FooterStyle>
                 </Container>
                     
-            </footer>
+            </FooterContainer>
         );
         }
         
