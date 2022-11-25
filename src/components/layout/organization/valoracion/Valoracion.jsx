@@ -9,6 +9,7 @@ import { ModalValoracion } from "@components/layout/organization/valoracion/valo
 
 
 export const Valoracion = (props) => {
+
   return (
     <ModalValoracion
     {...props}
