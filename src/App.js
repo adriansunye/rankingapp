@@ -1,5 +1,9 @@
 import React from 'react'
 import './App.scss';
+
+
+import Search from '@components/layout/navigation/Search/Search.jsx'
+
 import FilterButtons from '@components/layout/organization/filterButtons/FilterButtons';
 import AppView from './views/AppView';
 
@@ -22,7 +26,7 @@ function App() {
       <CreateApp/>
       <FilterButtons/>
 
-
+      <Search/>
       <AppView/>
 
 
