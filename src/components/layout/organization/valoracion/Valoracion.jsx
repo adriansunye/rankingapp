@@ -1,33 +1,14 @@
 import React from 'react'
-import styled from 'styled-components'
 import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
 import Form from 'react-bootstrap/Form';
-import Estrellas from '@components/layout/organization/estrellas/Estrellas';
-import { colorVariables } from '@utils/variables.js'
+import { RatingStyled } from '@components/layout/organization/appDetails/ratings/ratingsStyles'
+import { ModalValoracion } from "@components/layout/organization/valoracion/valoracionStyle.js"
 
 
 
-const ModalValoracion = styled(Modal)`
-.btn-primary{
-background: ${colorVariables.lila};
-border: ${colorVariables.lila};
-border-radius: 1rem;
-padding: .5rem 2rem;
-font-weight: 600;
 
-&:hover{
-  
-}
-
-}
-
-
-
-`
-
-
-const Valoracion = (props) => {
+export const Valoracion = (props) => {
   return (
     <ModalValoracion
     {...props}
@@ -37,14 +18,17 @@ const Valoracion = (props) => {
   >
     <Modal.Header closeButton>
       <Modal.Title className="fw-bold" id="contained-modal-title-vcenter">
-      {props.title}
+    
       </Modal.Title>
     </Modal.Header>
     <Modal.Body>
-      <Estrellas/> {/* Estrellas */}
+      <h2 className='fw-bold'>{props.title}</h2>
       <Form>
+      <Form.Group className="" controlId="ControlEstrellas">
+      <RatingStyled NameNew="valorar" /> {/* Estrellas */}
+      </Form.Group>
             <Form.Group
-              className="mb-3"
+              className=""
               controlId="valoracionModal"
             >
               <Form.Label></Form.Label>
@@ -56,7 +40,7 @@ const Valoracion = (props) => {
     <Modal.Footer>
       <Button onClick={props.onHide}>Enviar</Button>
     </Modal.Footer>
-  </ModalValoracion>
+    </ModalValoracion>
   )
 }
 
