@@ -23,11 +23,7 @@ function App() {
 
       <CreateApp/>
       <FilterButtons/>
-
-
       <AppView/>
-
-
 
 
       <>
