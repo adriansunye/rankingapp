@@ -39,7 +39,7 @@ display: flex;
 export const NavbarLink = styled.div `
 color: ${colorVariables.lila};
 font-family: ‘Mulish’, sans-serif;
-font-size: 16px;
+font-size: 16px;;
 text-decoration: none;
 margin: 8px;
 &:hover,
@@ -64,7 +64,7 @@ margin: 8px;
 export const Logo = styled.img `
 margin-top:15px;
 
-max-width: 200px;
+max-width: 180px;
 height: auto;
 `;
  export const OpenLinksButton = styled.button`

@@ -1,5 +1,5 @@
 
-import PublicRoute from '@components/routing/PublicRoute/PublicRoute';
+/* import PublicRoute from '@components/routing/PublicRoute/PublicRoute'; */
 import './App.scss';
 import Navbar from "./components/layout/navigation/NavBar/Navbar";
 
@@ -13,7 +13,7 @@ function App() {
     <div className = "App">
    
        <Navbar/>
-     
+  {/*    <FiltrO/> */}
     </div>
   );
 }
