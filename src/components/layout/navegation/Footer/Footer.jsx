@@ -10,7 +10,7 @@ import {ReactComponent as Twitter} from '@assets/logosSVG/imgFooter/mdi_twitter.
 import {ReactComponent as Facebook} from '@assets/logosSVG/imgFooter/Facebook.svg';     
 import {ReactComponent as Instagram} from '@assets/logosSVG/imgFooter/Instagram.svg'; 
 
-
+// {/* <Nav.Link as={Link} to="facebook"> <Facebook/> </Nav.Link> */} con bootstrap se importa asi el link 
     function Footer() {
         return (
 
@@ -23,8 +23,8 @@ import {ReactComponent as Instagram} from '@assets/logosSVG/imgFooter/Instagram.
                     <Icons>                    
                         <div className='nav-link'> Follow As:</div>
                         <Nav.Link href="https://twitter.com/" target="_blank"> <Twitter/></Nav.Link>
-                        <Nav.Link as={Link} to="facebook"> <Facebook/> </Nav.Link>
-                        <Nav.Link as={Link} to="instagram"> <Instagram/> </Nav.Link>
+                        <Nav.Link href="https://www.facebook.com/" target="_blank"> <Facebook/> </Nav.Link>
+                        <Nav.Link href="https://www.instagram.com/" target="_blank"> <Instagram/> </Nav.Link>
                     </Icons>
                 </FooterStyle>
                 </Container>
