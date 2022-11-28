@@ -45,33 +45,35 @@ const AppDetails = () => {
           </Row>
         </Row>
         <CustomTitle className="d-none d-md-block">Opiniones</CustomTitle>
-        <Row className="d-flex flex-column flex-lg-row m-0 gap-2">
-          <Col className="col-lg-6 m-0 p-0">
-            <OpinionCard className="m-0 p-2 mt-2">
-              <CustomTitle>Raul</CustomTitle>
-              <CustomParagraph>Muy Buena</CustomParagraph>
-            </OpinionCard>
-          </Col>
-          <Col className="col-lg-6 m-0 p-0">
-            <OpinionCard className="m-0 p-2">
-              <CustomTitle>Diego</CustomTitle>
-              <CustomParagraph>Funciona, messirve</CustomParagraph>
-            </OpinionCard>
-          </Col>
-          <Col className="col-lg-6 m-0 p-0">
-            <OpinionCard className="m-0 p-2">
-              <CustomTitle>Jordi Valldeperes</CustomTitle>
-              <CustomParagraph>Suscribete a mi canal @Span</CustomParagraph>
-            </OpinionCard>
-          </Col>
-          <Col className="col-lg-6 m-0 p-0">
-            <OpinionCard className="m-0 p-2">
-              <CustomTitle>Jordi Valldeperes</CustomTitle>
-              <CustomParagraph>Suscribete a mi canal @Span</CustomParagraph>
-            </OpinionCard>
-          </Col>
-        </Row>
       </div>
+      <div className="container">
+          <Row className="">
+            <Col md={6}  className="m-0">
+              <OpinionCard className="mb-2 p-2">
+                <CustomTitle>Raul</CustomTitle>
+                <CustomParagraph>Muy Buena</CustomParagraph>
+              </OpinionCard>
+            </Col>
+            <Col md={6} className="m-0">
+              <OpinionCard className="mb-2 p-2">
+                <CustomTitle>Diego</CustomTitle>
+                <CustomParagraph>Funciona, messirve</CustomParagraph>
+              </OpinionCard>
+            </Col>
+            <Col md={6} className="m-0">
+              <OpinionCard className="mb-2 p-2">
+                <CustomTitle>Jordi Valldeperes</CustomTitle>
+                <CustomParagraph>Suscribete a mi canal @Span</CustomParagraph>
+              </OpinionCard>
+            </Col>
+            <Col md={6} className="m-0">
+              <OpinionCard className="mb-2 p-2">
+                <CustomTitle>Jordi Valldeperes</CustomTitle>
+                <CustomParagraph>Suscribete a mi canal @Span</CustomParagraph>
+              </OpinionCard>
+            </Col>
+          </Row>
+        </div>
     </>
   );
 };
