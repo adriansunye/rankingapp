@@ -1,39 +1,14 @@
 import React from 'react'
-import styled from 'styled-components'
-import { ReactComponent as Star } from '@assets/stars/Star.svg' //! SVG de la estrellas
-import { colorVariables } from '@utils/variables.js'
-
-const EstrellasPuntos = styled(Star)`
-cursor:pointer;
-color:${ props => props.mode === 'on' ? colorVariables.amarillo : colorVariables.grisMedio };
-
-`
-
-const PuntuarStyle = styled.div`
-
-&:hover svg{
-    color: ${colorVariables.amarillo};
-    &:hover ~ svg {
-      color: ${colorVariables.grisMedio};
-    }
-}
-
-
-`
-
-/* ESTADOS */
-const EstrallaOff = "off"
-
-
+import {  PuntuarStyle, EstrellasPuntos } from '@components/layout/organization/estrellas/estrellasStyles.js'
 
 const Estrellas = () => {
   return (
 <PuntuarStyle>
-    <EstrellasPuntos mode=""/>
-    <EstrellasPuntos mode=""/>
-    <EstrellasPuntos mode=""/>
-    <EstrellasPuntos mode=""/>
-    <EstrellasPuntos mode=""/>
+    <EstrellasPuntos className="me-2" mode="on"/>
+    <EstrellasPuntos className="me-2" mode="on"/>
+    <EstrellasPuntos className="me-2" mode="on"/>
+    <EstrellasPuntos className="me-2" mode=""/>
+    <EstrellasPuntos className="me-2" mode=""/>
 </PuntuarStyle>
   )
 }

@@ -10,7 +10,7 @@ export const ModalValoracion = styled(Modal)`
 }
 .modal-header{
 border-bottom:none;
-padding: 1rem 2rem 0;
+padding: 2rem 2rem 0;
 
   .btn-close{
       color: ${colorVariables.grisOscuro}!important;;
@@ -20,7 +20,7 @@ padding: 1rem 2rem 0;
   }
 }
 .modal-body{
-  padding:1rem 2rem;
+  padding:0rem 2rem 1rem;
 }
 .modal-footer{
 border-top:none;
@@ -40,10 +40,17 @@ padding: .5rem 2rem;
 font-weight: 600;
 transition: background .2s ease-in-out;
 
+
+
 &:hover{
-    background: ${colorVariables.rosa};
-    border: ${colorVariables.rosa}
+  background: ${colorVariables.rosa};
+  border: ${colorVariables.rosa}
 }
 
-}
+@media (max-width: 768px) {
+  .btn-primary{ background: red;}
+  }
+
+
+  }
 `
