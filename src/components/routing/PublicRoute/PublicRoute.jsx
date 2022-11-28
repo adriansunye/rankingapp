@@ -6,7 +6,7 @@ import {
     Route
 } from "react-router-dom";
 
-import Index from '@views/Index/Index';
+import Search from '@views/Search/Search';
 import Detail from '@views/Detail/Detail';
 
 
@@ -15,7 +15,7 @@ export default class PublicRoute extends React.Component {
       return (
         <Router>
             <Routes>
-                <Route exact path="/" element={<Index/>}/>
+                <Route exact path="/" element={<Search/>}/>
                 <Route path="/detail:app" element={<Detail/>}/>
             </Routes>
         </Router>

@@ -1,7 +1,10 @@
+import  {useParams} from "react-router-dom";
+
 function Detail() {
+    let {app} = useParams();
     return (
         <>
-            <h1>Detail</h1>
+            <h1>Detail {app}</h1>
             
         </>
     );
