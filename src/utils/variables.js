@@ -8,3 +8,4 @@ export const colorVariables = {
             grisClaro: "#F5F5F5",
 }
 
+

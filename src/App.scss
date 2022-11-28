@@ -3,3 +3,15 @@ body {
     margin:0;
     padding: 0;
 }
+.bnt-star{
+    $color: transparent;
+    background-color: $color;
+    border-color:  $color;
+
+    &:hover, 
+    &:focus,
+    &:active{
+        background-color: $color !important;
+        border-color:  $color !important;
+    }
+}
