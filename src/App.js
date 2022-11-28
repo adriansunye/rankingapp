@@ -1,6 +1,8 @@
 /* 
  import PublicRoute from '@components/routing/PublicRoute/PublicRoute';  */
 import './App.scss';
+import AppDetails from './views/AppDetails';
+=======
 import Navbar from "./components/layout/navigation/NavBar/Navbar";
 import Filter from "../src/components/forms/filtro1/Filtro1";
 
@@ -13,7 +15,6 @@ import Filter from "../src/components/forms/filtro1/Filtro1";
 import Apps from "@store/objects/appsEs"
 import { useState } from "react";
 
-
 function App() {
   const [data] = useState(Apps.data.apps);
     for(const obj of data) {
@@ -22,13 +23,6 @@ function App() {
     }
     localStorage.setItem("data", JSON.stringify(data))
   return (
-
-
-    <>
-      <PublicRoute/>
-    </>
-
-
   );
 }
 
