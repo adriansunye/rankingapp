@@ -12,12 +12,17 @@ flex-direction: column;
 background-color:white; 
 `;
 export const RightContainer = styled.div `
-flex: 70%;
+flex: 40%;
 display: flex;
 justify-content: flex-end;
 align-items: center;
 padding-right: 5%;
-
+`;
+export const CenterContainer = styled.div `
+flex: 30%;
+display: flex;
+justify-content: flex-end;
+padding-left: 30px;
 
 `;
 export const LeftContainer = styled.div `
@@ -63,9 +68,8 @@ margin: 8px;
 
 export const Logo = styled.img `
 margin-top:15px;
-
-max-width: 180px;
-height: auto;
+width: auto;
+height: 50px;
 `;
  export const OpenLinksButton = styled.button`
  width: 70px;
