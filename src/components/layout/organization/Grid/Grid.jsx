@@ -24,7 +24,7 @@ const onImageError = (e) => {
                                 <Link to={{
                                     pathname: "/detail:" + lastSearch[key].app_id,
                                 }}
-                                    onClick={(e) => localStorage.setItem("clikedItem", JSON.stringify(lastSearch[key]))}
+                                    onClick={(e) => localStorage.setItem("clickedItem", JSON.stringify(lastSearch[key]))}
                                 >
                                     <CardStyled key={lastSearch[key].app_id}>
                                         <div className="row g-0">

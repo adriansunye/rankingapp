@@ -2,9 +2,6 @@ import styled from "styled-components";
 import Nav from 'react-bootstrap/Nav';
 import {colorVariables}  from '@utils/variables.js';
 
-
-
-
 export const FooterStyle = styled(Nav)`
 
     .nav-link   {

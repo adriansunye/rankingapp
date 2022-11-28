@@ -1,5 +1,4 @@
 import React from 'react';
-import {Link} from 'react-router-dom';
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import { FooterStyle, FooterContainer } from './Footer_styled';
@@ -15,7 +14,7 @@ import {ReactComponent as Instagram} from '@assets/logosSVG/imgFooter/Instagram.
     function Footer() {
         return (
 
-            <FooterContainer>     
+            <FooterContainer className="fixed-bottom">     
                 
                 <Container>                
                 <FooterStyle className="me-auto justify-content-around flex-nowrap">

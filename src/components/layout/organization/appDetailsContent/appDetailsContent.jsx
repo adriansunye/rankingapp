@@ -7,14 +7,16 @@ import { CustomParagraph } from "@components/layout/organization/appDetailsConte
 import Logo from "@assets/logosSVG/logoAirBnb.png";
 import { Row, Col } from "react-bootstrap";
 import { OpinionCard } from "./opinionCard/opinionStyles";
+import { useState } from "react";
 
 const AppDetails = () => {
+  const [clickedObject] = useState(JSON.parse(localStorage.getItem("clickedItem")));
   return (
     <>
       <div className="container">
         <Row>
           <Col className="d-flex d-lg-none justify-content-end">
-            <Button image={TrashIcon} />
+          <Button image={TrashIcon} />
           </Col>
         </Row>
         <Row className="d-flex">
@@ -27,18 +29,15 @@ const AppDetails = () => {
             </CustomTitle>
             <CustomTitle className="mb-0">App / Web</CustomTitle>
             <CustomTitle weight="bold" className="mt-lg-5" size="medium">
-              Airbnb
+            {clickedObject.app_name}
             </CustomTitle>
           </Col>
           <Col className=" col-md-4 d-flex">
-            <img src={Logo} alt="Logo" className="img-fluid" />
+            <img src= {clickedObject.app_icon} alt="Logo" className="img-fluid" />
           </Col>
           <Row>
             <CustomParagraph className="col-lg-8 mt-3" size="medium">
-              Airbnb es una compañía que ofrece una plataforma digital dedicada
-              a la oferta de alojamientos a particulares y turísticos mediante
-              la cual los anfitriones pueden publicitar y contratar el arriendo
-              de sus propiedades con sus huéspedes.
+            {clickedObject.app_description}
             </CustomParagraph>
           </Row>
         </Row>

@@ -8,7 +8,7 @@ import IconHome from "../../../../assets/iconhome.png";
  */
 function Navbar() {
   const [extendNavbar, setExtendNavbar] = useState(false)
-  return <NavbarContainer>
+  return <NavbarContainer className="fixed-top">
    <NavbarInnerContainer>
   <LeftContainer> <Logo src= {LogoImg} ></Logo>
   </LeftContainer>

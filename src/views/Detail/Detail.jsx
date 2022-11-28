@@ -1,13 +1,11 @@
-import  {useParams} from "react-router-dom";
-
-function Detail() {
-    let {app} = useParams();
-    return (
-        <>
-            <h1>Detail {app}</h1>
-            
-        </>
-    );
-};
+import React from 'react'
+import AppDetailsContent from '@components/layout/organization/appDetailsContent/appDetailsContent'
+const Detail = () => {
+  return (
+    <>
+      <AppDetailsContent/>
+    </>
+  )
+}
 
 export default Detail;

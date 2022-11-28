@@ -1,6 +1,6 @@
 function SearchBar({handleChange}) {
     return (
-            <div className="fixed-top container mt-2">
+            <div className="fixed-top container">
                 <input
                     className="form-control"
                     placeholder='Search...'
