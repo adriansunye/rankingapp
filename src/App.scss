@@ -1,5 +1,8 @@
 @import "~bootstrap/scss/bootstrap";
-
+body {
+    margin:0;
+    padding: 0;
+}
 .bnt-star{
     $color: transparent;
     background-color: $color;

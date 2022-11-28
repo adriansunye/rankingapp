@@ -1,12 +1,6 @@
-import React from 'react'
-import { RatingStyled } from './ratings/ratingsStyles'
+import React from 'react';
+import { RatingStyled } from './ratings/ratingsStyles';
 
-const appDetails = () => {
-  return (
-    
-        <RatingStyled/>
-   
-  )
-}
-
-export default appDetails
+export const appDetails = () => {
+	return <RatingStyled />;
+};

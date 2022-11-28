@@ -2,23 +2,18 @@ import Button from 'react-bootstrap/Button';
 import styled from "styled-components";
 import { colorVariables } from '@utils/variables'
 
-export const FilterButtonStyled = styled(Button)`
-    color: black;
+export const AddAppStyled = styled(Button)`
+    background-color: ${colorVariables.lila};
     border-color: ${colorVariables.lila};
-    background: transparent;
-    border-top: 15px;
-    width: 7rem;
-    height: 2.5rem;
+    border-radius: 50%;
+    scale: 0.65;
     &:hover{
         background-color: ${colorVariables.lila};
         border-color: ${colorVariables.amarillo};
-    }&:focus{
+    }&:active{
         border-color: ${colorVariables.amarillo} !important;
         background-color: ${colorVariables.lila} !important;
         opacity: 80%;
-        scale: 1.03;
-        color: white;
-    }&:active{
-        scale: 1.05;
+        scale: 0.70;    
     };
 `
