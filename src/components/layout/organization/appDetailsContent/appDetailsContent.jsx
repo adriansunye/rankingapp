@@ -1,7 +1,6 @@
 import React from "react";
 import { RatingStyled } from "./ratings/ratingsStyles";
 import Button from "./buttons/button";
-import plusIcon from "@assets/icons/plusIcon.svg";
 import TrashIcon from "@assets/icons/trash.svg";
 import { CustomTitle } from "@components/layout/organization/appDetailsContent/titles/titlesStyling.js";
 import { CustomParagraph } from "@components/layout/organization/appDetailsContent/paragraph/paragraphStyling.js";
@@ -14,8 +13,7 @@ const AppDetails = () => {
     <>
       <div className="container">
         <Row>
-          <Col className="d-flex d-lg-none justify-content-md-between justify-content-end">
-            <Button image={plusIcon} />
+          <Col className="d-flex d-lg-none justify-content-end">
             <Button image={TrashIcon} />
           </Col>
         </Row>
@@ -48,25 +46,25 @@ const AppDetails = () => {
       </div>
       <div className="container">
           <Row className="">
-            <Col md={6}  className="m-0">
+            <Col lg={6}  className="m-0">
               <OpinionCard className="mb-2 p-2">
                 <CustomTitle>Raul</CustomTitle>
                 <CustomParagraph>Muy Buena</CustomParagraph>
               </OpinionCard>
             </Col>
-            <Col md={6} className="m-0">
+            <Col lg={6} className="m-0">
               <OpinionCard className="mb-2 p-2">
                 <CustomTitle>Diego</CustomTitle>
                 <CustomParagraph>Funciona, messirve</CustomParagraph>
               </OpinionCard>
             </Col>
-            <Col md={6} className="m-0">
+            <Col lg={6} className="m-0">
               <OpinionCard className="mb-2 p-2">
                 <CustomTitle>Jordi Valldeperes</CustomTitle>
                 <CustomParagraph>Suscribete a mi canal @Span</CustomParagraph>
               </OpinionCard>
             </Col>
-            <Col md={6} className="m-0">
+            <Col lg={6} className="m-0">
               <OpinionCard className="mb-2 p-2">
                 <CustomTitle>Jordi Valldeperes</CustomTitle>
                 <CustomParagraph>Suscribete a mi canal @Span</CustomParagraph>
