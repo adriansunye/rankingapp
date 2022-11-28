@@ -1,3 +1,4 @@
+
 export const colorVariables = {
             lila: "#7273DD",
             amarillo:  "#FCB149",
@@ -7,3 +8,4 @@ export const colorVariables = {
             grisClaro: "#F5F5F5",
             
 }
+

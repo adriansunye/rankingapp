@@ -7,9 +7,16 @@ body {
   font-family: ‘Mulish’, sans-serif !important;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+ /*  background-image: url(/src/assets/arcotrans.png);
+  background-position: right top;
+  background-repeat: no-repeat;
+ background-position-x: right;
+@media 
+  */
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
