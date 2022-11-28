@@ -9,14 +9,26 @@ import Filter from "../src/components/forms/filtro1/Filtro1";
 
 /*  import {Search} from '@components/layout/navigation/Search/Search';  */
 
+
+import Apps from "@store/objects/appsEs"
+import { useState } from "react";
+
+
 function App() {
+  const [data] = useState(Apps.data.apps);
+    for(const obj of data) {
+        obj.opinions = ["me sirve", "una mierda"];
+        obj.type = Math.floor(Math.random() * 3);
+    }
+    localStorage.setItem("data", JSON.stringify(data))
   return (
-    <div className = "App">
-   
-       <Navbar/>
-       <Filter/>
-  {/*    <FiltrO/> */}
-    </div>
+
+
+    <>
+      <PublicRoute/>
+    </>
+
+
   );
 }
 

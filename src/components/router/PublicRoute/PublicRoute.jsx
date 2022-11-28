@@ -1,4 +1,5 @@
 import React from 'react';
+import Footer from '@components/layout/navegation/Footer/Footer';
 
 import {
     BrowserRouter as Router,
@@ -6,8 +7,6 @@ import {
     Route
 } from "react-router-dom";
 
-import Search from '@views/Search/Search';
-import Detail from '@views/Detail/Detail';
 
 
 export default class PublicRoute extends React.Component {
@@ -15,10 +14,12 @@ export default class PublicRoute extends React.Component {
       return (
         <Router>
             <Routes>
-                <Route exact path="/" element={<Search/>}/>
-                <Route path="/detail:app" element={<Detail/>}/>
+                <Route exact path="/" element={<Footer/>}/>
+                
             </Routes>
         </Router>
       );
     }
-  }
+    
+
+    }
