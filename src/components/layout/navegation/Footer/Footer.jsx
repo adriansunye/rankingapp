@@ -18,11 +18,11 @@ import {ReactComponent as Instagram} from '@assets/logosSVG/imgFooter/Instagram.
                 
                 <Container>                
                 <FooterStyle className="me-auto justify-content-around flex-nowrap">
-                    <div className='nav-link '> © ARCO.APPS  2022. </div>
+                    <div className='nav-link '> © ARCO.APPS  2022. <br />We love our users! </div>
                     
                     <Icons>                    
                         <div className='nav-link'> Follow As:</div>
-                        <Nav.Link as={Link} to="twitter"> <Twitter/></Nav.Link>
+                        <Nav.Link href="https://twitter.com/" target="_blank"> <Twitter/></Nav.Link>
                         <Nav.Link as={Link} to="facebook"> <Facebook/> </Nav.Link>
                         <Nav.Link as={Link} to="instagram"> <Instagram/> </Nav.Link>
                     </Icons>
