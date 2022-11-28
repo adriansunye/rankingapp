@@ -2,8 +2,8 @@ const rating = ({ className, children }) => {
     return (
       <>
         <div className={className}>
-          <div>
-            <div>
+          <div className={className}>
+            <div className={className}>
               <input type="radio" name="rating" id="rating-5" />
               <label for="rating-5"></label>
               <input type="radio" name="rating" id="rating-4" />

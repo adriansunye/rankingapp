@@ -4,16 +4,10 @@ import rating from "./ratings";
 
 export const RatingStyled = styled(rating)`
 
-&:last-child {
-  display: flex;
-  width: 100%;
-  justify-content: center;
-  overflow: hidden;
-  flex-direction: row-reverse;
-  height: 150px;
-  position: relative;
-}
 
+&:last-child {
+  width: 100%;
+}
 &:last-child > input {
   display: none;
 }

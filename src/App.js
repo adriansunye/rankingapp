@@ -1,13 +1,11 @@
 
 import './App.scss';
-import FilterButtons from './components/layout/organization/filterButtons/FilterButtons';
-import AppView from './views/AppView';
+import AppDetails from './views/AppDetails';
 
 function App() {
   return (
     <div className="App">
-      <FilterButtons/>
-      <AppView/>
+      <AppDetails/>
     </div>
   );
 }
