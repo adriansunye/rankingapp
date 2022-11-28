@@ -9,7 +9,7 @@ width: 100%;
 height: 80px;
 display: flex;
 flex-direction: column;
-background-color:white; 
+background-color:transparent; 
 `;
 export const RightContainer = styled.div `
 flex: 40%;

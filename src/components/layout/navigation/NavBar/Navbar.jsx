@@ -1,6 +1,6 @@
 
 import React, {useState} from "react";
-import {NavbarContainer, LeftContainer, CenterContainer, RightContainer, NavbarInnerContainer, NavbarExtendedContainer, NavbarLinkContainer, NavbarLink, Logo, OpenLinksButton, NavbarLinkExtended   } from "./Navbar.styled";
+import {NavbarContainer, LeftContainer,  RightContainer, NavbarInnerContainer, NavbarExtendedContainer, NavbarLinkContainer, NavbarLink, Logo, OpenLinksButton, NavbarLinkExtended   } from "./Navbar.styled";
 
 import LogoImg from "../../../../assets/arco.png";
 /* import IconAdd from "../../../../assets/iconadd.png";
@@ -12,8 +12,7 @@ function Navbar() {
    <NavbarInnerContainer>
   <LeftContainer> <Logo src= {LogoImg} ></Logo>
   </LeftContainer>
-{/*  <CenterContainer> <Logo src= {IconAdd} ></Logo>
-  </CenterContainer>  */}
+
    <RightContainer> 
     <NavbarLinkContainer>
     <NavbarLink to ="/">Home</NavbarLink>
