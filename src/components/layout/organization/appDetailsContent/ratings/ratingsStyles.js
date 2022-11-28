@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import { colorVariables } from '@utils/variables.js'
-import rating from "@components/layout/organization/appDetails/ratings/ratings.jsx"
+import rating from "@components/layout/organization/appDetailsContent/ratings/ratings.jsx"
 
 
 /* Estilos al div que envuelve a las estrellas */

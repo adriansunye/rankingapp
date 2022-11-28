@@ -2,7 +2,7 @@ import React from 'react'
 import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
 import Form from 'react-bootstrap/Form';
-import { RatingStyled } from '@components/layout/organization/appDetails/ratings/ratingsStyles'
+import { RatingStyled } from '@components/layout/organization/appDetailsContent/ratings/ratingsStyles'
 import { ModalValoracion } from "@components/layout/organization/valoracion/valoracionStyle.js"
 
 
