@@ -1,8 +1,11 @@
 
 import PublicRoute from '@components/routing/PublicRoute/PublicRoute';
 import './App.scss';
+
+
 import Apps from "@store/objects/appsEs"
 import { useState } from "react";
+
 
 function App() {
   const [data] = useState(Apps.data.apps);
@@ -12,9 +15,12 @@ function App() {
     }
     localStorage.setItem("data", JSON.stringify(data))
   return (
+
+
     <>
       <PublicRoute/>
     </>
+
   );
 }
 
