@@ -3,8 +3,6 @@ import './App.scss';
 
 
 import PublicRoute from '@components/routing/PublicRoute/PublicRoute';
-
-
 import FilterButtons from '@components/layout/organization/filterButtons/FilterButtons';
 
 /* -----START componente de pop-up valoracion --- */
@@ -19,11 +17,19 @@ import Estrellas from '@components/layout/organization/estrellas/Estrellas.jsx'
 import CreateApp  from '@components/layout/organization/createApp/CreateApp.jsx'
 /* END Crear una APP */
 
+import Apps from "@store/objects/appsEs"
+
 
 function App() {
 
   const [modalShow, setModalShow] = useState(false); /* REQUERIMIENTO: añadir en el render de la vista para poder ejecutar el pop-up de valoración*/
 
+  const [data] = useState(Apps.data.apps);
+    for(const obj of data) {
+        obj.opinions = ["me sirve", "una mierda"];
+        obj.type = Math.floor(Math.random() * 3);
+    }
+    localStorage.setItem("data", JSON.stringify(data))
   return (
     <>
       <PublicRoute/>
