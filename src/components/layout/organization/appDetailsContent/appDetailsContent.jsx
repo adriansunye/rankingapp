@@ -1,5 +1,4 @@
 import React from "react";
-import { RatingStyled } from "./ratings/ratingsStyles";
 import AddButton from "./buttons/button";
 import TrashIcon from "@assets/icons/trash.svg";
 import { CustomTitle } from "@components/layout/organization/appDetailsContent/titles/titlesStyling.js";
