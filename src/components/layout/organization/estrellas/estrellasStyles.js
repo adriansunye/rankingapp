@@ -9,7 +9,8 @@ color:${ props => props.mode === 'on' ? colorVariables.amarillo : colorVariables
 `
 
 export const PuntuarStyle = styled.div`
-
+ display: flex;
+ justify-content: start;
 &:hover svg{
     color: ${colorVariables.amarillo};
     &:hover ~ svg {
