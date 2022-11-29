@@ -31,7 +31,7 @@ function Search() {
                 }
             })
             setSearchedObject(searchedObjects.sort((a, b) => (a.rating > b.rating) ? 1 : -1))
-
+            
             searchedObjects.length === 0
                 ? localStorage.setItem("lastSearch", "No matches found")
                 : localStorage.setItem("lastSearch", JSON.stringify(searchedObject));
@@ -41,19 +41,61 @@ function Search() {
     const handleChange = (event) => {
         setSearchString(event.target.value)
     };
+
+    const filtro = (id) => {
+        let arrayFiltro = [];
+        let device = [];
+        JSON.parse(localStorage.getItem("data")).filter(obj => {
+            if(obj.app_name.toLowerCase().includes(searchString.toLowerCase())||
+            obj.app_description.toLowerCase().includes(searchString.toLowerCase()) ||
+            obj.app_category.toLowerCase().includes(searchString.toLowerCase())){
+                
+                arrayFiltro.push(obj)
+            }
+        })
+        switch(id){
+            case "mejores": 
+                arrayFiltro.sort((a, b) => (a.rating > b.rating) ? 1 : -1).splice(10);
+                return arrayFiltro;
+            case "peores": 
+                arrayFiltro.sort((a, b) => (a.rating < b.rating) ? 1 : -1).splice(10);
+                return arrayFiltro;
+            case "web": 
+            device = [];
+                Object.entries(arrayFiltro).map(([key])  =>
+                    arrayFiltro[key].type === 0 ? device.push(arrayFiltro[key]) : null)
+
+                    device.sort((a, b) => (a.rating > b.rating) ? 1 : -1).splice(10);
+                return device;
+            case "desktop": 
+            device = [];
+                Object.entries(arrayFiltro).map(([key])  =>
+                    arrayFiltro[key].type === 1 ? device.push(arrayFiltro[key]) : null)
+
+                    device.sort((a, b) => (a.rating > b.rating) ? 1 : -1).splice(10);
+                return device;
+            default:
+        }
+        
+        
+    }
+    const handleClick = (event) => {
+        
+        setSearchedObject(filtro(event.target.id));
+    }
     //try for of function
     return (
         <>
-            <NavBar/>
-            <SearchBar handleChange={handleChange}/>
+            <NavBar />
+            <SearchBar handleChange={handleChange} />
 
-            <FilterButtons />
+            <FilterButtons handleClick={handleClick}/>
 
             <SearchedObjectContext.Provider value={searchedObject}>
                 <Grid />
             </SearchedObjectContext.Provider>
 
-            <Footer/>
+            <Footer />
         </>
     );
 };
