@@ -1,4 +1,4 @@
-import FilterButton from "./FilterButton/FilterButton";
+import FilterButton from "@components/layout/organization/filterButtons/filterButton/FilterButton.jsx";
 import { useState } from "react";
 
 const FilterButtons = ({handleClick}) => {
