@@ -6,7 +6,7 @@ import LogoImg from "../../../../assets/arco.png";
 /* import IconAdd from "../../../../assets/iconadd.png";
 import IconHome from "../../../../assets/iconhome.png";
  */
-function Navbar() {
+function NavBar() {
   const [extendNavbar, setExtendNavbar] = useState(false)
   return <NavbarContainer className="fixed-top">
    <NavbarInnerContainer>
@@ -42,4 +42,4 @@ function Navbar() {
 }
   
 
-export default Navbar;
+export default NavBar;
