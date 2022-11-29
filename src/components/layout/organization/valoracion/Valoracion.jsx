@@ -24,7 +24,7 @@ export const Valoracion = (props) => {
     </Modal.Header>
     <Modal.Body>
       <h2 className='fw-bold'>{props.title}</h2>
-      <Form>
+      <Form onSubmit={props.handleSubmit}>
       <Form.Group className="" controlId="ControlEstrellas">
       <RatingStyled NameNew="valorar" /> {/* Estrellas */}
       </Form.Group>
@@ -36,10 +36,10 @@ export const Valoracion = (props) => {
               <Form.Control as="textarea" rows={3} placeholder={props.comentario}/>
               
             </Form.Group>
+      <Button type="submit" onClick={props.onHide}>Enviar</Button>
           </Form>
     </Modal.Body>
     <Modal.Footer>
-      <Button onClick={props.onHide}>Enviar</Button>
     </Modal.Footer>
     </ModalValoracion>
   )
