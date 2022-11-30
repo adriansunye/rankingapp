@@ -1,6 +1,6 @@
 
 import React, {useState} from "react";
-import {NavbarContainer, LeftContainer,  RightContainer, NavbarInnerContainer, NavbarExtendedContainer, NavbarLinkContainer, NavbarLink, Logo, OpenLinksButton, NavbarLinkExtended   } from "./Navbar.styled";
+import {NavbarContainer, LeftContainer,  RightContainer, NavbarInnerContainer, NavbarExtendedContainer, NavbarLinkContainer, NavbarLink, Logo, OpenLinksButton, NavbarLinkExtended   } from "./Navbar.styled.js";
 
 import LogoImg from "../../../../assets/arco.png";
 /* import IconAdd from "../../../../assets/iconadd.png";
