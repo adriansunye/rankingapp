@@ -9,10 +9,6 @@ import PublicRoute from '@components/routing/PublicRoute/PublicRoute';
 import { useState } from 'react';
 
 
-/* START Crear una APP */
-import CreateApp from '@components/layout/organization/createApp/CreateApp.jsx'
-/* END Crear una APP */
-
 import Apps from "@store/objects/appsEs"
 import Opinions from "@store/opinions/opinions"
 
@@ -33,11 +29,6 @@ function App() {
   return (
     <>
       <PublicRoute />
-
-      <CreateApp />
-      
-  
-
     </>
   );
 }

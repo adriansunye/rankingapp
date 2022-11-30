@@ -13,7 +13,6 @@ function Search() {
     const [searchedObject, setSearchedObject] = useState([]);
     const [searchString, setSearchString] = useState("");
     useEffect(() => {
-        console.log(JSON.parse(localStorage.getItem("data")))
         localStorage.setItem("userSearch", JSON.stringify(searchString));
         if (searchString.length === 0) {
             setSearchedObject(JSON.parse(localStorage.getItem("data")).sort((a, b) => (a.app_name > b.app_name) ? 1 : -1));
@@ -81,18 +80,21 @@ function Search() {
     const handleClick = (event) => {
         setSearchedObject(filtro(event.target.id));
     }
+
+    
     //try for of function
     return (
         <>
             <NavBar />
+            <div className="mt-2">
             <SearchBar handleChange={handleChange} />
 
             <FilterButtons handleClick={handleClick} />
-
+            </div>
             <SearchedObjectContext.Provider value={searchedObject}>
                 <Grid />
             </SearchedObjectContext.Provider>
-
+           
             <Footer />
         </>
     );
