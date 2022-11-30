@@ -1,6 +1,7 @@
 
 import React, {useState} from "react";
 import {NavbarContainer, LeftContainer,  RightContainer, NavbarInnerContainer, NavbarExtendedContainer, NavbarLinkContainer, NavbarLink, Logo, OpenLinksButton, NavbarLinkExtended   } from "./Navbar.styled";
+
 import CreateApp from '@components/layout/organization/createApp/CreateApp.jsx'
 import LogoImg from "../../../../assets/arco.png";
 /* import IconAdd from "../../../../assets/iconadd.png";
@@ -15,8 +16,7 @@ function NavBar() {
 
    <RightContainer> 
     <NavbarLinkContainer>
-    <CreateApp />
-
+    <NavbarLink to ="/"><CreateApp/></NavbarLink>
     <OpenLinksButton onClick = {() => { 
   setExtendNavbar((curr) => !curr);
    }} > 
@@ -28,10 +28,9 @@ function NavBar() {
 
  { extendNavbar && ( 
 <NavbarExtendedContainer>
-<NavbarLinkExtended to ="/">Home</NavbarLinkExtended >
-<NavbarLinkExtended to ="/addapp">Add New App</NavbarLinkExtended>
-    <NavbarLinkExtended  to ="/about">About Us</NavbarLinkExtended >
-    <NavbarLinkExtended  to = "/contact">Contact Us</NavbarLinkExtended >
+
+<NavbarLinkExtended to ="/"><CreateApp/></NavbarLinkExtended >
+
 </NavbarExtendedContainer>
 )}
 </NavbarContainer>
