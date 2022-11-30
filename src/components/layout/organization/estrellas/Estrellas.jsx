@@ -7,9 +7,6 @@ const Estrellas = () => {
 
   const [ rating ] = useState(JSON.parse(localStorage.getItem('clickedItem')).rating) 
 
-  
-
-console.log(rating)
 const rows = []
 
 for(let i = 0; i < 5 ; i++){
