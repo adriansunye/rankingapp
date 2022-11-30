@@ -10,42 +10,54 @@ import { useState, useEffect } from 'react';
 import Valoracion from '@components/layout/organization/valoracion/Valoracion'
 import Button  from 'react-bootstrap/Button';
 import Estrellas from '@components/layout/organization/estrellas/Estrellas.jsx'
+import { Link } from "react-router-dom"
 /* -----END componente de pop-up valoracion --- */
 
 const AppDetails = () => {
   const [modalShow, setModalShow] = useState(false);
-  const [clickedObject, setClickedObject ] = useState(JSON.parse(localStorage.getItem("clickedItem")));
+  const [clickedObject] = useState(JSON.parse(localStorage.getItem("clickedItem")));
   const [elementList, setElementList] = useState()
   
-  
-
- 
  useEffect(( ) => { 
 
-  console.log(clickedObject)
 
+  let updateLocalStorage = JSON.parse(localStorage.getItem("data"));
+
+  if(elementList != null){
+    updateLocalStorage.map( objt => objt.app_id === clickedObject.app_id ? objt.opinions.push(elementList) : objt  )
+  
+  localStorage.setItem("data", JSON.stringify(updateLocalStorage));
+  }
 } );
 
 const handleSubmit = (e) =>{
 
 e.preventDefault();
 
- let texto = e.target[5].value
+let opinion = {user:"user", opinion: e.target[5].value, rating: 3}
+console.log(opinion)
 
-console.log(clickedObject.opinions)
-
-clickedObject.opinions.push(texto);
-setElementList(clickedObject.opinions)
-
-console.log(elementList)
-
-
-let updateLocalStorage = JSON.parse(localStorage.getItem("data")).map( objt => (objt.app_id === clickedObject.app_id) ? objt.opinions.push(texto) : null  );
-
-localStorage.setItem("data", JSON.stringify(updateLocalStorage ));
-
-
+clickedObject.opinions.push(opinion);
+setElementList(opinion)
 } 
+
+const handleClick = (e) =>{
+
+
+  const removeLocalStorage = Object.entries(JSON.parse(localStorage.getItem("data"))) // converts each entry to [key, value]
+  .filter(([k, v]) => v.app_id !== clickedObject.app_id) // define the criteria to include/exclude items
+  .reduce((acc, [k, v]) => {
+    acc[k] = v;
+    return acc; // this function can be improved, it converts the [[k, v]] back to {k: v, k: v, ...}
+  }, {});
+
+  localStorage.setItem("data", JSON.stringify(removeLocalStorage));
+
+  
+
+  console.log(removeLocalStorage)
+  
+}
 
 
   return (
@@ -59,7 +71,8 @@ localStorage.setItem("data", JSON.stringify(updateLocalStorage ));
         </Row>
         <Row className="d-flex justify-content-start">
            {/* Ejecutar modal de valoracion START */}
-         <Button className="bnt-star" onClick={() => setModalShow(true)}>
+          <Button className="bnt-star" onClick={() => setModalShow(true)}>
+        
           <Estrellas />
         </Button>
         </Row>
@@ -81,6 +94,8 @@ localStorage.setItem("data", JSON.stringify(updateLocalStorage ));
             {clickedObject.app_description}
             </CustomParagraph>
           </Row>
+          <Button onClick={() => handleClick()}/>
+          
         </Row>
         <CustomTitle className="d-none d-md-block">Opiniones</CustomTitle>
       </div>
@@ -88,8 +103,8 @@ localStorage.setItem("data", JSON.stringify(updateLocalStorage ));
           <Row className="">
           { clickedObject.opinions.map( item => <Col lg={6} className="m-0">
     <OpinionCard className="mb-2 p-2">
-      <CustomTitle>Diego</CustomTitle>
-      <CustomParagraph>{item}</CustomParagraph>
+      <CustomTitle>{item.user}</CustomTitle>
+      <CustomParagraph>{item.opinion}</CustomParagraph>
     </OpinionCard>
     </Col> )}
           </Row>
