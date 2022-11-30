@@ -6,6 +6,7 @@ import NavBar from '@components/layout/navigation/NavBar/Navbar';
 const Detail = () => {
   return (
     <>
+      <NavBar />
       <AppDetailsContent />
       <Footer />
     </>
