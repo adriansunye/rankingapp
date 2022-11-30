@@ -14,18 +14,22 @@ import CreateApp from '@components/layout/organization/createApp/CreateApp.jsx'
 /* END Crear una APP */
 
 import Apps from "@store/objects/appsEs"
+import Opinions from "@store/opinions/opinions"
 
 
 function App() {
 
-  
-
   const [data] = useState(Apps.data.apps);
-  for (const obj of data) {
-    obj.opinions = ["me sirve", "una mierda"];
-    obj.type = Math.floor(Math.random() * 3);
+  if (!localStorage.getItem("data")) {
+    console.log(data)
+    for (const obj of data) {
+      obj.opinions = Opinions;
+      obj.type = Math.floor(Math.random() * 3);
+    }
+    localStorage.setItem("data", JSON.stringify(data))
   }
-  localStorage.setItem("data", JSON.stringify(data))
+
+    
   return (
     <>
       <PublicRoute />
