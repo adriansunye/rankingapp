@@ -20,21 +20,40 @@ const AppDetails = () => {
   
 
  
- useEffect(( ) => { 
+useEffect(() => { 
 
   console.log(clickedObject)
 
-} );
+},[clickedObject] );
 
 const handleSubmit = (e) =>{
 
 e.preventDefault();
 
- let texto = e.target[5].value
+let texto = e.target[5].value
+
+
+let valueStar = ""
+console.log("target",e.target);
+
+for(let i=0; i < 5; i++){
+  if( e.target[i].checked ){
+   valueStar = e.target[i].value;
+  }else{
+
+  }
+}
+
+  console.log("star",valueStar);
+
+
+
+
 
 console.log(clickedObject.opinions)
 
 clickedObject.opinions.push(texto);
+
 setElementList(clickedObject.opinions)
 
 console.log(elementList)
@@ -86,12 +105,14 @@ localStorage.setItem("data", JSON.stringify(updateLocalStorage ));
       </div>
       <div className="container">
           <Row className="">
-          { clickedObject.opinions.map( item => <Col lg={6} className="m-0">
-    <OpinionCard className="mb-2 p-2">
-      <CustomTitle>Diego</CustomTitle>
-      <CustomParagraph>{item}</CustomParagraph>
-    </OpinionCard>
-    </Col> )}
+          { clickedObject.opinions.map( (item , index) => (
+          <Col key={index + "msg"} lg={6} className="m-0">
+            <OpinionCard className="mb-2 p-2">
+              <CustomTitle>Anónimo</CustomTitle>
+              <CustomParagraph>{item}</CustomParagraph>
+            </OpinionCard>
+          </Col>
+    ) )}
           </Row>
         </div>
         
@@ -112,4 +133,4 @@ localStorage.setItem("data", JSON.stringify(updateLocalStorage ));
   );
 };
 
-export default AppDetails;
+export default AppDetails

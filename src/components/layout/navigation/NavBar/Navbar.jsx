@@ -8,7 +8,8 @@ import IconHome from "../../../../assets/iconhome.png";
  */
 function NavBar() {
   const [extendNavbar, setExtendNavbar] = useState(false)
-  return <NavbarContainer className="fixed-top">
+  return ( 
+  <NavbarContainer>
    <NavbarInnerContainer>
   <LeftContainer> <Logo src= {LogoImg} ></Logo>
   </LeftContainer>
@@ -37,7 +38,9 @@ function NavBar() {
     <NavbarLinkExtended  to = "/contact">Contact Us</NavbarLinkExtended >
 </NavbarExtendedContainer>
 )}
-</NavbarContainer>
+</NavbarContainer> 
+
+)
 
 }
   

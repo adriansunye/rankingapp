@@ -6,7 +6,7 @@ import NavBar from '@components/layout/navigation/NavBar/NavBar';
 const Detail = () => {
   return (
     <>
-      <NavBar />
+      <NavBar className="fixed-top"/>
       <AppDetailsContent />
       <Footer />
     </>
