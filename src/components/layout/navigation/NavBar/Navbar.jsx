@@ -1,24 +1,22 @@
 
 import React, {useState} from "react";
 import {NavbarContainer, LeftContainer,  RightContainer, NavbarInnerContainer, NavbarExtendedContainer, NavbarLinkContainer, NavbarLink, Logo, OpenLinksButton, NavbarLinkExtended   } from "./Navbar.styled";
-import CreateApp from "../../organization/createApp/CreateApp";
+
+import CreateApp from '@components/layout/organization/createApp/CreateApp.jsx'
 import LogoImg from "../../../../assets/arco.png";
 /* import IconAdd from "../../../../assets/iconadd.png";
 import IconHome from "../../../../assets/iconhome.png";
  */
-function Navbar() {
+function NavBar() {
   const [extendNavbar, setExtendNavbar] = useState(false)
-  return <NavbarContainer className="fixed-top">
+  return <NavbarContainer className="sticky-top">
    <NavbarInnerContainer>
   <LeftContainer> <Logo src= {LogoImg} ></Logo>
   </LeftContainer>
 
    <RightContainer> 
     <NavbarLinkContainer>
-
     <NavbarLink to ="/"><CreateApp/></NavbarLink>
-   
-
     <OpenLinksButton onClick = {() => { 
   setExtendNavbar((curr) => !curr);
    }} > 
@@ -40,4 +38,4 @@ function Navbar() {
 }
   
 
-export default Navbar;
+export default NavBar;

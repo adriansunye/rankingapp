@@ -4,7 +4,7 @@ import SearchBar from "@components/layout/navigation/SearchBar/SearchBar";
 import Grid from "@components/layout/organization/Grid/Grid";
 import FilterButtons from '@components/layout/organization/filterButtons/FilterButtons';
 import Footer from '@components/layout/navigation/Footer/Footer';
-import NavBar from '@components/layout/navigation/NavBar/NavBar';
+import NavBar from '@components/layout/navigation/NavBar/Navbar';
 
 export const SearchedObjectContext = createContext(null);
 
@@ -41,19 +41,61 @@ function Search() {
     const handleChange = (event) => {
         setSearchString(event.target.value)
     };
+
+    const filtro = (id) => {
+        let arrayFiltro = [];
+        let device = [];
+        JSON.parse(localStorage.getItem("data")).filter(obj => {
+            if (obj.app_name.toLowerCase().includes(searchString.toLowerCase()) ||
+                obj.app_description.toLowerCase().includes(searchString.toLowerCase()) ||
+                obj.app_category.toLowerCase().includes(searchString.toLowerCase())) {
+
+                arrayFiltro.push(obj)
+            }
+        })
+        switch (id) {
+            case "mejores":
+                arrayFiltro.sort((a, b) => (a.rating > b.rating) ? 1 : -1).splice(12);
+                return arrayFiltro;
+            case "peores":
+                arrayFiltro.sort((a, b) => (a.rating < b.rating) ? 1 : -1).splice(12);
+                return arrayFiltro;
+            case "web":
+                device = [];
+                Object.entries(arrayFiltro).map(([key]) =>
+                    arrayFiltro[key].type === 0 ? device.push(arrayFiltro[key]) : null)
+
+                device.sort((a, b) => (a.rating > b.rating) ? 1 : -1).splice(12);
+                return device;
+            case "desktop":
+                device = [];
+                Object.entries(arrayFiltro).map(([key]) =>
+                    arrayFiltro[key].type === 1 ? device.push(arrayFiltro[key]) : null)
+
+                device.sort((a, b) => (a.rating > b.rating) ? 1 : -1).splice(12);
+                return device;
+            default:
+        }
+    }
+    const handleClick = (event) => {
+        setSearchedObject(filtro(event.target.id));
+    }
+
+    
     //try for of function
     return (
         <>
-            <NavBar/>
-            <SearchBar handleChange={handleChange}/>
+            <NavBar />
+            <div className="mt-2">
+            <SearchBar handleChange={handleChange} />
 
-            <FilterButtons />
-
+            <FilterButtons handleClick={handleClick} />
+            </div>
             <SearchedObjectContext.Provider value={searchedObject}>
                 <Grid />
             </SearchedObjectContext.Provider>
-
-            <Footer/>
+           
+            <Footer />
         </>
     );
 };
