@@ -8,6 +8,7 @@ import { OpinionCard } from "./opinionCard/opinionStyles";
 /* -----START componente de pop-up valoracion --- */
 import { useState, useEffect } from 'react';
 import Valoracion from '@components/layout/organization/valoracion/Valoracion'
+import DeleteAlert from '@components/layout/organization/DeleteAlert/DeleteAlert'
 import Button  from 'react-bootstrap/Button';
 import Estrellas from '@components/layout/organization/estrellas/Estrellas.jsx'
 import { Link } from "react-router-dom"
@@ -15,6 +16,7 @@ import { Link } from "react-router-dom"
 
 const AppDetails = () => {
   const [modalShow, setModalShow] = useState(false);
+  const [deleteShow, setDeleteShow] = useState(false);
   const [clickedObject] = useState(JSON.parse(localStorage.getItem("clickedItem")));
   const [elementList, setElementList] = useState()
   
@@ -42,21 +44,18 @@ setElementList(opinion)
 } 
 
 const handleClick = (e) =>{
+  let removeLocalStorage = [];
 
-
-  const removeLocalStorage = Object.entries(JSON.parse(localStorage.getItem("data"))) // converts each entry to [key, value]
-  .filter(([k, v]) => v.app_id !== clickedObject.app_id) // define the criteria to include/exclude items
-  .reduce((acc, [k, v]) => {
-    acc[k] = v;
-    return acc; // this function can be improved, it converts the [[k, v]] back to {k: v, k: v, ...}
-  }, {});
+  console.log(removeLocalStorage)
+  JSON.parse(localStorage.getItem("data")).filter(obj => {
+    if(obj.app_id !== clickedObject.app_id){
+      removeLocalStorage.push(obj)
+    }
+  })
 
   localStorage.setItem("data", JSON.stringify(removeLocalStorage));
 
-  
-
-  console.log(removeLocalStorage)
-  
+  setDeleteShow(true)
 }
 
 
@@ -119,6 +118,12 @@ const handleClick = (e) =>{
           show={modalShow}
           onHide={() => setModalShow(false)}
           handleSubmit={handleSubmit}
+        />
+
+        <DeleteAlert
+        title="Elemento eleiminado"
+        show={deleteShow}
+        onHide={() => setDeleteShow(false)}
         />
 
         {/* Ejecutar modal de valoracion END */}
