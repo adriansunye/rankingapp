@@ -11,7 +11,6 @@ import Valoracion from '@components/layout/organization/valoracion/Valoracion'
 import DeleteAlert from '@components/layout/organization/DeleteAlert/DeleteAlert'
 import Button  from 'react-bootstrap/Button';
 import Estrellas from '@components/layout/organization/estrellas/Estrellas.jsx'
-import { Link } from "react-router-dom"
 /* -----END componente de pop-up valoracion --- */
 
 const AppDetails = () => {
@@ -33,11 +32,16 @@ const AppDetails = () => {
 } );
 
 const handleSubmit = (e) =>{
+  e.preventDefault();
+  let ratingValue = ""
+  for(let i=0; i < 5; i++){
+    if(e.target[i].checked){
+      ratingValue = e.target[i].value
+      console.log(e.target[i].value)
+    }
+  }
+let opinion = {user:"user", opinion: e.target[5].value, rating: `${ratingValue}`}
 
-e.preventDefault();
-
-let opinion = {user:"user", opinion: e.target[5].value, rating: 3}
-console.log(opinion)
 
 clickedObject.opinions.push(opinion);
 setElementList(opinion)
@@ -89,11 +93,11 @@ const handleClick = (e) =>{
             <img src= {clickedObject.app_icon} alt="Logo" className="img-fluid" />
           </Col>
           <Row>
-            <CustomParagraph className="col-lg-8 mt-3" size="medium">
+            <CustomParagraph isDescription className="col-lg-8 mt-3" size="medium">
             {clickedObject.app_description}
             </CustomParagraph>
           </Row>
-          <Button onClick={() => handleClick()}/>
+        
           
         </Row>
         <CustomTitle className="d-none d-md-block">Opiniones</CustomTitle>
@@ -121,7 +125,7 @@ const handleClick = (e) =>{
         />
 
         <DeleteAlert
-        title="Elemento eleiminado"
+        title="Elemento eliminado"
         show={deleteShow}
         onHide={() => setDeleteShow(false)}
         />
