@@ -4,7 +4,7 @@ import SearchBar from "@components/layout/navigation/SearchBar/SearchBar";
 import Grid from "@components/layout/organization/Grid/Grid";
 import FilterButtons from '@components/layout/organization/filterButtons/FilterButtons';
 import Footer from '@components/layout/navigation/Footer/Footer';
-import NavBar from '@components/layout/navigation/NavBar/Navbar';
+import NavBar from '@components/layout/navigation/NavBar/NavBar';
 
 export const SearchedObjectContext = createContext(null);
 

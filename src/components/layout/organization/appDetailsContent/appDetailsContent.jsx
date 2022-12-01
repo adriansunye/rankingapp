@@ -93,11 +93,11 @@ const handleClick = (e) =>{
             <img src= {clickedObject.app_icon} alt="Logo" className="img-fluid" />
           </Col>
           <Row>
-            <CustomParagraph className="col-lg-8 mt-3" size="medium">
+            <CustomParagraph isDescription className="col-lg-8 mt-3" size="medium">
             {clickedObject.app_description}
             </CustomParagraph>
           </Row>
-          <Button onClick={() => handleClick()}/>
+        
           
         </Row>
         <CustomTitle className="d-none d-md-block">Opiniones</CustomTitle>
