@@ -28,7 +28,7 @@ const onImageError = (e) => {
                                 >
                                     <CardStyled key={lastSearch[key].app_id}>
                                         <div className="row g-0">
-                                            <div className="col-2">
+                                            <div className="col-2 d-flex justify-content-center">
                                                 <img
                                                     src={lastSearch[key].app_icon ? lastSearch[key].app_icon : placeholderImage}
                                                     alt="logo"

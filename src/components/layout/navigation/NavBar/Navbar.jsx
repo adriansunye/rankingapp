@@ -1,41 +1,62 @@
 
-import React, {useState} from "react";
-import {NavbarContainer, LeftContainer,  RightContainer, NavbarInnerContainer, NavbarExtendedContainer, NavbarLinkContainer, NavbarLink, Logo, OpenLinksButton, NavbarLinkExtended   } from "./Navbar.styled";
+import React, { useState } from "react";
+import {
+  NavbarContainer,
+  LeftContainer,
+  RightContainer,
+  NavbarInnerContainer,
+  NavbarExtendedContainer,
+  NavbarLinkContainer,
+  Logo,
+  OpenLinksButton,
+  NavbarLinkExtended,
+} from "./Navbar.styled";
+import CreateApp from "@components/layout/organization/createApp/CreateApp.jsx";
 
-import CreateApp from '@components/layout/organization/createApp/CreateApp.jsx'
 import LogoImg from "../../../../assets/arco.png";
+import { Link } from "react-router-dom";
 /* import IconAdd from "../../../../assets/iconadd.png";
 import IconHome from "../../../../assets/iconhome.png";
  */
 function NavBar() {
-  const [extendNavbar, setExtendNavbar] = useState(false)
-  return <NavbarContainer className="sticky-top">
-   <NavbarInnerContainer>
-  <LeftContainer> <Logo src= {LogoImg} ></Logo>
-  </LeftContainer>
 
-   <RightContainer> 
-    <NavbarLinkContainer>
-    <NavbarLink to ="/"><CreateApp/></NavbarLink>
-    <OpenLinksButton onClick = {() => { 
-  setExtendNavbar((curr) => !curr);
-   }} > 
-  {extendNavbar ?<> &#10005; </> : <>&#x2630; </> }  
-   </OpenLinksButton>
-      </NavbarLinkContainer> 
-  </RightContainer>
-</NavbarInnerContainer>
+  const [extendNavbar, setExtendNavbar] = useState(false);
+  return (
+    <NavbarContainer className="sticky-top">
+      <NavbarInnerContainer>
+        <Link to="/">
+          <LeftContainer>
+            {" "}
+            <Logo src={LogoImg}></Logo>
+          </LeftContainer>
+        </Link>
 
- { extendNavbar && ( 
-<NavbarExtendedContainer>
+        <RightContainer>
+          <NavbarLinkContainer>
+            <CreateApp />
 
-<NavbarLinkExtended to ="/"><CreateApp/></NavbarLinkExtended >
+            <OpenLinksButton
+              onClick={() => {
+                setExtendNavbar((curr) => !curr);
+              }}
+            >
+              {extendNavbar ? <> &#10005; </> : <>&#x2630; </>}
+            </OpenLinksButton>
+          </NavbarLinkContainer>
+        </RightContainer>
+      </NavbarInnerContainer>
 
-</NavbarExtendedContainer>
-)}
-</NavbarContainer>
 
+      {extendNavbar && (
+        <NavbarExtendedContainer>
+          <NavbarLinkExtended to="/">Home</NavbarLinkExtended>
+          <NavbarLinkExtended to="/addapp">Add New App</NavbarLinkExtended>
+          <NavbarLinkExtended to="/about">About Us</NavbarLinkExtended>
+          <NavbarLinkExtended to="/contact">Contact Us</NavbarLinkExtended>
+        </NavbarExtendedContainer>
+      )}
+    </NavbarContainer>
+  );
 }
-  
 
 export default NavBar;
