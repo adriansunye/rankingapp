@@ -19,7 +19,7 @@ You may also see any lint errors in the console.
 ### `npm test`
 To Run Test Suite
 
-### 'npm run eject'
+### `npm run eject`
 For run the configuration and script files. You also can upgrade or downgrade the dependencies version on the ejected package.json file.
 
 ### `npm run build`
