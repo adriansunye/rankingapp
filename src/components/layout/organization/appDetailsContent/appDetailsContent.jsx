@@ -36,42 +36,11 @@ const handleSubmit = (e) =>{
 
 e.preventDefault();
 
-let texto = e.target[5].value
 let opinion = {user:"user", opinion: e.target[5].value, rating: 3}
 console.log(opinion)
 
-
-let valueStar = ""
-console.log("target",e.target);
-
-for(let i=0; i < 5; i++){
-  if( e.target[i].checked ){
-   valueStar = e.target[i].value;
-  }else{
-
-  }
-}
-
-  console.log("star",valueStar);
-
-
-
-
-
-console.log(clickedObject.opinions)
-
-clickedObject.opinions.push(texto);
-
-setElementList(clickedObject.opinions)
-
-console.log(elementList)
-
-
-let updateLocalStorage = JSON.parse(localStorage.getItem("data")).map( objt => (objt.app_id === clickedObject.app_id) ? objt.opinions.push(texto) : null  );
-
-localStorage.setItem("data", JSON.stringify(updateLocalStorage ));
-
-
+clickedObject.opinions.push(opinion);
+setElementList(opinion)
 } 
 
 const handleClick = (e) =>{
@@ -131,7 +100,7 @@ const handleClick = (e) =>{
       </div>
       <div className="container">
           <Row className="">
-          { clickedObject.opinions.map( (item , index) => <Col key={index + "msg"}lg={6} className="m-0">
+          { clickedObject.opinions.map( item => <Col lg={6} className="m-0">
     <OpinionCard className="mb-2 p-2">
       <CustomTitle>{item.user}</CustomTitle>
       <CustomParagraph>{item.opinion}</CustomParagraph>
@@ -163,4 +132,4 @@ const handleClick = (e) =>{
   );
 };
 
-export default AppDetails
+export default AppDetails;
