@@ -1,8 +1,9 @@
 
 import { useContext } from "react";
 import { SearchedObjectContext } from "@views/Search/Search";
-import { CardStyled} from "@components/layout/organization/Grid/Card/Card"
+import { CardStyled } from "@components/layout/organization/Grid/Card/Card"
 import { Link } from "react-router-dom"
+import { EstrellasPuntos } from '@components/layout/organization/estrellas/estrellasStyles.js'
 
 function Grid() {
     const lastSearch = useContext(SearchedObjectContext);
@@ -27,20 +28,27 @@ const onImageError = (e) => {
                                     onClick={() => localStorage.setItem("clickedItem", JSON.stringify(lastSearch[key]))}
                                 >
                                     <CardStyled key={lastSearch[key].app_id}>
-                                        <div className="row g-0">
-                                            <div className="col-2 d-flex justify-content-center">
+                                        <div className="d-flex h-100 align-content-center">
+                                            <div className="col-4">
                                                 <img
                                                     src={lastSearch[key].app_icon ? lastSearch[key].app_icon : placeholderImage}
                                                     alt="logo"
                                                     onError={onImageError}
-                                                    className="img-fluid rounded-start"
+                                                    style={{height: "101px"}}
+                                                    className="img-fluid p-3 rounded-circle"
                                                 />
                                             </div>
-                                            <div className="col-10">
-                                                <CardStyled.Body>
-                                                    <h6>{lastSearch[key].app_name}</h6>
-                                                    <CardStyled.Text>{lastSearch[key].app_category}</CardStyled.Text>
-                                                    <CardStyled.Text>{lastSearch[key].app_rating}</CardStyled.Text>
+                                            <div className="col-8">
+                                                <CardStyled.Body className="row">
+                                                    <div>
+                                                        <CardStyled.Title>{lastSearch[key].app_name}</CardStyled.Title>
+                                                        <CardStyled.Text>{lastSearch[key].app_category}</CardStyled.Text>
+                                                    </div>
+                                                    
+                                                    <div>
+                                                        <span style={{color: "black"}}>{lastSearch[key].rating}</span>
+                                                        <EstrellasPuntos mode="on"></EstrellasPuntos>
+                                                    </div>
                                                 </CardStyled.Body>
                                             </div>
                                         </div>
