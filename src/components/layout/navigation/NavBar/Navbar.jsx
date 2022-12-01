@@ -32,8 +32,7 @@ function NavBar() {
 
         <RightContainer>
           <NavbarLinkContainer>
-            <CreateApp />
-
+          
             <OpenLinksButton
               onClick={() => {
                 setExtendNavbar((curr) => !curr);
@@ -48,10 +47,7 @@ function NavBar() {
 
       {extendNavbar && (
         <NavbarExtendedContainer>
-          <NavbarLinkExtended to="/">Home</NavbarLinkExtended>
-          <NavbarLinkExtended to="/addapp">Add New App</NavbarLinkExtended>
-          <NavbarLinkExtended to="/about">About Us</NavbarLinkExtended>
-          <NavbarLinkExtended to="/contact">Contact Us</NavbarLinkExtended>
+          <CreateApp />
         </NavbarExtendedContainer>
       )}
     </NavbarContainer>
