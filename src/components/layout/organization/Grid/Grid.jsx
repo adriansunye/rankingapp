@@ -38,7 +38,7 @@ const onImageError = (e) => {
                                                     className="img-fluid p-3 rounded-circle card-img-fix"
                                                 />
                                             </div>
-                                            <div className="col col-md-7 col-lg">
+                                            <div className="col-8 col-sm col-md-7 col-lg">
                                                 <CardStyled.Body className="row h-100 align-items-center justify-content-between">
                                                     <div className="col-9 px-0">
                                                         <CardStyled.Title>{lastSearch[key].app_name}</CardStyled.Title>

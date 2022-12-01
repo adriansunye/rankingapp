@@ -82,21 +82,22 @@ const handleClick = (e) =>{
         <Row>
           <Col className="">
             <CustomTitle className="mb-3" weight="light" color="grey">
-              Valorar
+             Valoraración
             </CustomTitle>
             <CustomTitle className="mb-0">{ clickedObject.type === 0 ? "Web" : "Desktop" } </CustomTitle>
-            <CustomTitle weight="bold" className="mt-lg-5" size="medium">
+            <CustomTitle weight="bold" className="mt-lg-5 mb-4" size="medium">
             {clickedObject.app_name}
             </CustomTitle>
           </Col>
-          <Col className=" col-md-4 d-flex">
-            <img src= {clickedObject.app_icon} alt="Logo" className="img-fluid" />
+          <Col className="col-md-4 d-flex">
+            <img src= {clickedObject.app_icon} alt="Logo" className="avatar-img-detail img-fluid" />
           </Col>
-          <Row>
-            <CustomParagraph isDescription className="col-lg-8 mt-3" size="medium">
+          <Col className="col-12">
+            <h4 className="fw-normal text-muted mb-1">Descripción</h4>
+            <CustomParagraph isDescription className="col-lg-8  mb-5" size="medium">
             {clickedObject.app_description}
             </CustomParagraph>
-          </Row>
+          </Col>
         
           
         </Row>

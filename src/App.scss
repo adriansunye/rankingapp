@@ -18,3 +18,11 @@ a {
         border-color:  $color !important;
     }
 }
+
+
+
+.avatar-img-detail{
+    border-radius: 16rem;
+    -o-object-fit: fill ;
+       object-fit: fill ;
+}
