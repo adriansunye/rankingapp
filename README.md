@@ -45,11 +45,11 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/m
 ## Base dependencies
 - [react](https://reactjs.org/) for build our user interfaces. 
 - [react-route-dom](https://v5.reactrouter.com/web/guides/quick-start) for implement dynamic routing in a web app.
--[react-bootstrap](https://react-bootstrap.github.io/) for create responsive and styled components.
-<!-- web-vitals -->
--[bootstrap](https://get.bootstrap.com/) for create responsive and styled components.
+- [react-bootstrap](https://react-bootstrap.github.io/) for create responsive and styled components.
+- [react-app-rewire-alias](https://www.npmjs.com/package/react-app-rewire-alias) for save a directory config-overrides at the root of the project and exporting overrides from the default index.
+- [bootstrap](https://get.bootstrap.com/) for create responsive and styled components.
 - [SaSS](https://sass-lang.com) for state management.
--[styled-components](https://styled-components.com/) for styled react componennts.
+- [styled-components](https://styled-components.com/) for styled react componennts.
 
 
 ## Folder structure
