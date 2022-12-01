@@ -20,4 +20,10 @@ export const CardStyled = styled(Card)`
 .card-rating{
     color:black;
 }
+
+.card-img-fix{
+  width:101px;
+  height: 101px;
+  object-fit: cover;
+}
 `
