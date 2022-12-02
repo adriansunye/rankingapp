@@ -64,8 +64,8 @@ const AppDetails = () => {
 		<>
 			<div className="container">
 				<Row>
-					<Col className="d-flex d-lg-none justify-content-end">
-						<AddButton image={TrashIcon} />
+					<Col className="d-flex justify-content-end">
+						<AddButton image={TrashIcon} handleClick={handleClick} />
 					</Col>
 				</Row>
 				<Row>
@@ -90,14 +90,14 @@ const AppDetails = () => {
 					</Col>
 					<Col className="col-12">
 						<h4 className="fw-normal text-muted mb-1">Descripción</h4>
-						<CustomParagraph isDescription className="col-lg-8  mb-5" size="medium">
+						<CustomParagraph isDescription className="col-lg-8" size="medium">
 							{clickedObject.app_description}
 						</CustomParagraph>
 					</Col>
 				</Row>
 				<CustomTitle className="d-none d-md-block">Opiniones</CustomTitle>
 			</div>
-			<div className="container">
+			<div className="container mb-5 pb-1">
 				<Row className="">
 					{clickedObject.opinions.map((item) => (
 						<Col lg={6} className="m-0">

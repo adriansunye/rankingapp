@@ -3,7 +3,7 @@ import SearchBar from "@components/layout/navigation/SearchBar/SearchBar";
 import Grid from "@components/layout/organization/Grid/Grid";
 import FilterButtons from "@components/layout/organization/filterButtons/FilterButtons";
 import Footer from "@components/layout/navigation/Footer/Footer";
-import NavBar from "@components/layout/navigation/NavBar/NavBar";
+import NavBar from "@components/layout/navigation/NavBar/Navbar";
 import BackgroundLogoPicture from "@assets/arcofondo.png";
 import {BackgroundLogo} from "@components/layout/organization/backgroundLogo/backgroundLogo.js"
 
@@ -69,10 +69,10 @@ function Search() {
     });
     switch (id) {
       case "mejores":
-        arrayFiltro.sort((a, b) => (a.rating > b.rating ? 1 : -1)).splice(12);
+        arrayFiltro.sort((a, b) => (a.rating < b.rating ? 1 : -1)).splice(12);
         return arrayFiltro;
       case "peores":
-        arrayFiltro.sort((a, b) => (a.rating < b.rating ? 1 : -1)).splice(12);
+        arrayFiltro.sort((a, b) => (a.rating > b.rating ? 1 : -1)).splice(12);
         return arrayFiltro;
       case "web":
         device = [];
@@ -80,7 +80,7 @@ function Search() {
           arrayFiltro[key].type === 0 ? device.push(arrayFiltro[key]) : null
         );
 
-        device.sort((a, b) => (a.rating > b.rating ? 1 : -1)).splice(12);
+        device.sort((a, b) => (a.rating < b.rating ? 1 : -1)).splice(12);
         return device;
       case "desktop":
         device = [];
@@ -88,7 +88,7 @@ function Search() {
           arrayFiltro[key].type === 1 ? device.push(arrayFiltro[key]) : null
         );
 
-        device.sort((a, b) => (a.rating > b.rating ? 1 : -1)).splice(12);
+        device.sort((a, b) => (a.rating < b.rating ? 1 : -1)).splice(12);
         return device;
       default:
     }
