@@ -17,8 +17,10 @@ const onImageError = (e) => {
     return (
         <>
             <pre>
-                <div className="container mt-5 overflow-auto">
+
+                <div className="container mt-5 overflow-hidden">
                     <div className="row g-3" >
+
                         {lastSearch.length !== 0
                             ? Object.entries(lastSearch).map(([key]) =>
                             <div className="col-md-6 col-lg-4 ">
@@ -29,7 +31,7 @@ const onImageError = (e) => {
                                 >
                                     <CardStyled key={lastSearch[key].app_id}>
                                         <div className="row h-100 align-content-between">
-                                            <div className="col-auto">
+                                            <div className="col col-sm-auto">
                                                 <img
                                                     src={lastSearch[key].app_icon ? lastSearch[key].app_icon : placeholderImage}
                                                     alt="logo"
@@ -45,9 +47,11 @@ const onImageError = (e) => {
                                                         <CardStyled.Text>{lastSearch[key].app_category}</CardStyled.Text>
                                                     </div>
                                                     
+
                                                     <div className="col justify-content-end d-flex h-100">
+
                                                         <span style={{color: "black"}}>{lastSearch[key].rating}</span>
-                                                        <EstrellasPuntos mode="on"></EstrellasPuntos>
+                                                        <EstrellasPuntos mode="on" ></EstrellasPuntos>
                                                     </div>
                                                 </CardStyled.Body>
                                             </div>

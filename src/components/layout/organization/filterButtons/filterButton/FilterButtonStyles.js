@@ -6,7 +6,6 @@ export const FilterButtonStyled = styled(Button)`
     color: black;
     border-color: ${colorVariables.lila};
     background: transparent;
-    border-top: 15px;
     width: 7rem;
     height: 2.5rem;
     &:hover{
