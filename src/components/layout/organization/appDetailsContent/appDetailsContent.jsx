@@ -7,10 +7,11 @@ import { Row, Col } from 'react-bootstrap';
 import { OpinionCard } from './opinionCard/opinionStyles';
 /* -----START componente de pop-up valoracion --- */
 import { useState, useEffect } from 'react';
-import Valoracion from '@components/layout/organization/valoracion/Valoracion';
-import DeleteAlert from '@components/layout/organization/DeleteAlert/DeleteAlert';
-import Button from 'react-bootstrap/Button';
-import Estrellas from '@components/layout/organization/estrellas/Estrellas.jsx';
+import Valoracion from '@components/layout/organization/valoracion/Valoracion'
+import DeleteAlert from '@components/layout/organization/DeleteAlert/DeleteAlert'
+import Button  from 'react-bootstrap/Button';
+import Estrellas from '@components/layout/organization/estrellas/Estrellas.jsx'
+import EstrellasValoracion from '@components/layout/organization/estrellas/EstrellasValoracion.jsx'
 /* -----END componente de pop-up valoracion --- */
 
 const AppDetails = () => {
@@ -71,7 +72,7 @@ const AppDetails = () => {
 					<Col className="d-flex flex-column justify-content-center">
 						{/* Ejecutar modal de valoracion START */}
 						<Button className="bnt-star px-0" onClick={() => setModalShow(true)}>
-							<Estrellas />
+							<Estrellas/>
 						</Button>
 						<CustomTitle className="mb-3" weight="light" color="grey">
 							Valoraración
@@ -101,6 +102,9 @@ const AppDetails = () => {
 					{clickedObject.opinions.map((item) => (
 						<Col lg={6} className="m-0">
 							<OpinionCard className="mb-2 p-2">
+
+      <EstrellasValoracion rat={item.rating} /> 
+
 								<CustomTitle>{item.user}</CustomTitle>
 								<CustomParagraph>{item.opinion}</CustomParagraph>
 							</OpinionCard>
