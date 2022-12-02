@@ -11,6 +11,7 @@ import Valoracion from '@components/layout/organization/valoracion/Valoracion'
 import DeleteAlert from '@components/layout/organization/DeleteAlert/DeleteAlert'
 import Button  from 'react-bootstrap/Button';
 import Estrellas from '@components/layout/organization/estrellas/Estrellas.jsx'
+import EstrellasValoracion from '@components/layout/organization/estrellas/EstrellasValoracion.jsx'
 /* -----END componente de pop-up valoracion --- */
 
 const AppDetails = () => {
@@ -76,7 +77,7 @@ const handleClick = (e) =>{
            {/* Ejecutar modal de valoracion START */}
           <Button className="bnt-star" onClick={() => setModalShow(true)}>
         
-          <Estrellas />
+          <Estrellas/>
         </Button>
         </Row>
         <Row>
@@ -93,11 +94,11 @@ const handleClick = (e) =>{
             <img src= {clickedObject.app_icon} alt="Logo" className="img-fluid" />
           </Col>
           <Row>
-            <CustomParagraph className="col-lg-8 mt-3" size="medium">
+            <CustomParagraph isDescription className="col-lg-8 mt-3" size="medium">
             {clickedObject.app_description}
             </CustomParagraph>
           </Row>
-          <Button onClick={() => handleClick()}/>
+        
           
         </Row>
         <CustomTitle className="d-none d-md-block">Opiniones</CustomTitle>
@@ -106,6 +107,9 @@ const handleClick = (e) =>{
           <Row className="">
           { clickedObject.opinions.map( item => <Col lg={6} className="m-0">
     <OpinionCard className="mb-2 p-2">
+
+      <EstrellasValoracion rat={item.rating} /> 
+
       <CustomTitle>{item.user}</CustomTitle>
       <CustomParagraph>{item.opinion}</CustomParagraph>
     </OpinionCard>

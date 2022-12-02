@@ -15,8 +15,7 @@ body {
  */
 } 
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+code , pre, kbd, samp{
+  font-family: 'Mulish', sans-serif !important;
 }
 
