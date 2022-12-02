@@ -6,6 +6,7 @@ import {
   NavbarInnerContainer,
   NavbarExtendedContainer,
   NavbarLinkContainer,
+  NavbarLink,
   Logo,
   OpenLinksButton,
   NavbarLinkExtended,
@@ -32,14 +33,16 @@ function NavBar() {
 
         <RightContainer>
           <NavbarLinkContainer>
-          
-            <OpenLinksButton
+          <NavbarLink>
+          <CreateApp />
+          </NavbarLink>
+            {/* <OpenLinksButton
               onClick={() => {
                 setExtendNavbar((curr) => !curr);
               }}
             >
               {extendNavbar ? <> &#10005; </> : <>&#x2630; </>}
-            </OpenLinksButton>
+            </OpenLinksButton> */}
           </NavbarLinkContainer>
         </RightContainer>
       </NavbarInnerContainer>
