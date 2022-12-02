@@ -26,7 +26,11 @@ overflow: hidden;
 .card-rating{
     color:black;
 }
-@media screen {
-    
+
+.card-img-fix{
+  width:101px;
+  height: 101px;
+  object-fit: cover;
+
 }
 `

@@ -1,5 +1,5 @@
 import React, {useState} from 'react'
-import {  PuntuarStyle, EstrellasPuntos } from '@components/layout/organization/estrellas/estrellasStyles.js'
+import { PuntuarStyle, EstrellasPuntos } from '@components/layout/organization/estrellas/estrellasStyles.js'
 
 
 
@@ -12,17 +12,14 @@ const rows = []
 for(let i = 0; i < 5 ; i++){
 
   if( i < rating ){
-   rows.push( <EstrellasPuntos className="me-2" mode="on"/>)
+   rows.push( <EstrellasPuntos key={i + "-estrella"} className="me-2" mode="on"/>)
   } else{
-  rows.push( <EstrellasPuntos className="me-2" mode=""/>)}
+  rows.push( <EstrellasPuntos key={i + "-estrella"} className="me-2" mode=""/>)}
 }
 
   return (
 <PuntuarStyle>
-   
    {rows}
-
-
 </PuntuarStyle>
   )
 }

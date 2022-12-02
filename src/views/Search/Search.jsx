@@ -7,6 +7,7 @@ import NavBar from "@components/layout/navigation/NavBar/Navbar";
 import BackgroundLogoPicture from "@assets/arcofondo.png";
 import {BackgroundLogo} from "@components/layout/organization/backgroundLogo/backgroundLogo.js"
 
+
 export const SearchedObjectContext = createContext(null);
 
 function Search() {
