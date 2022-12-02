@@ -3,6 +3,7 @@ import {
   NavbarContainer,
   LeftContainer,
   RightContainer,
+  CenterContainer,
   NavbarInnerContainer,
   NavbarExtendedContainer,
   NavbarLinkContainer,
@@ -10,7 +11,7 @@ import {
   Logo,
   OpenLinksButton,
   NavbarLinkExtended,
-} from "./Navbar.styled";
+} from "./NavBar.styled";
 import CreateApp from "@components/layout/organization/createApp/CreateApp.jsx";
 
 import LogoImg from "../../../../assets/arco.png";
@@ -30,27 +31,27 @@ function NavBar() {
             <Logo src={LogoImg}></Logo>
           </LeftContainer>
         </Link>
-
+      
         <RightContainer>
           <NavbarLinkContainer>
           <NavbarLink>
           <CreateApp />
           </NavbarLink>
-            {/* <OpenLinksButton
+            <OpenLinksButton
               onClick={() => {
                 setExtendNavbar((curr) => !curr);
               }}
-            >
+            >  
               {extendNavbar ? <> &#10005; </> : <>&#x2630; </>}
-            </OpenLinksButton> */}
+            </OpenLinksButton>
           </NavbarLinkContainer>
         </RightContainer>
       </NavbarInnerContainer>
-
-
       {extendNavbar && (
         <NavbarExtendedContainer>
-          <CreateApp />
+          <NavbarLinkExtended> 
+            <CreateApp />
+            </NavbarLinkExtended>
         </NavbarExtendedContainer>
       )}
     </NavbarContainer>
