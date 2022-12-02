@@ -17,8 +17,10 @@ const onImageError = (e) => {
     return (
         <>
             <pre>
-                <div className="container mt-5 overflow-auto">
-                    <div className="row g-3" >
+
+                <div className="container mt-5 overflow-hidden">
+                    <div className="row g-2" >
+
                         {lastSearch.length !== 0
                             ? Object.entries(lastSearch).map(([key]) =>
                             <div className="col-md-6 col-lg-4 ">
@@ -45,9 +47,11 @@ const onImageError = (e) => {
                                                         <CardStyled.Text>{lastSearch[key].app_category}</CardStyled.Text>
                                                     </div>
                                                     
+
                                                     <div className="col justify-content-end d-flex h-100">
+
                                                         <span style={{color: "black"}}>{lastSearch[key].rating}</span>
-                                                        <EstrellasPuntos mode="on"></EstrellasPuntos>
+                                                        <EstrellasPuntos mode="on" style={{width: "1rem", height: "auto"}}></EstrellasPuntos>
                                                     </div>
                                                 </CardStyled.Body>
                                             </div>

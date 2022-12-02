@@ -4,6 +4,12 @@ import { colorVariables } from '@utils/variables'
 
 
 export const CardStyled = styled(Card)`
+overflow: hidden;
+&:hover {
+    scale: 1.02;
+    z-index: 1;
+    background-color: ${colorVariables.grisClaro};
+}
 .card-span {
     color:white;
 }
@@ -25,5 +31,6 @@ export const CardStyled = styled(Card)`
   width:101px;
   height: 101px;
   object-fit: cover;
+
 }
 `
