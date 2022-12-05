@@ -12,7 +12,7 @@ export const FooterStyle = styled(Nav)`
             align-items: center;
             justify-content: space-between;
             padding: 0.5rem;
-            font-size: 0.8rem;
+            font-size: 0.9rem;
             height: 52px;
 
 }
@@ -27,7 +27,6 @@ export const Icons = styled.div `
 export const FooterContainer = styled.footer`
 
     background: ${colorVariables.lila};
-    justify-content: space-between;
     height: 52px;
         
 

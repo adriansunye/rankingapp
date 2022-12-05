@@ -18,7 +18,7 @@ flex: 40%;
 display: flex;
 justify-content: flex-end;
 align-items: center;
-padding-right: 5%;
+/* padding-right: 5%; */
 `;
 export const CenterContainer = styled.div `
 flex: 30%;
@@ -31,7 +31,7 @@ export const LeftContainer = styled.div `
 flex: 30%;
 display: flex;
 justify-content: flex-start;
-padding-left: 30px;
+/* padding-left: 30px; */
 
 
 `;
@@ -49,7 +49,7 @@ color: ${colorVariables.lila};
 font-family: ‘Mulish’, sans-serif;
 font-size: 16px;;
 text-decoration: none;
-margin: 8px;
+margin: 2px;
 &:hover,
 &:focus{
     color: ${colorVariables.rosa};
@@ -59,7 +59,6 @@ margin: 8px;
 
 export const NavbarLinkExtended = styled.div` 
 color: ${colorVariables.lila};
-font-family: ‘Mulish’, sans-serif;
 font-size: 16px;
 text-decoration: none;
 margin: 8px;
@@ -77,14 +76,16 @@ height: 50px;
 `;
 
 export const OpenLinksButton = styled.button`
- width: 70px;
- height:50px;
+/*  width: 70px; */
+/*  height:50px; */
  background: none;
  border: none;
  color: ${colorVariables.lila};
- font-size:2rem;
- padding:8px 8px;
- margin:5px;
+/*  font-size:2rem; */
+/*  padding:8px 8px; */
+/*  margin:5px; */
+font-size: 3rem;
+padding:0;
   cursor: pointer;
  @media (min-width:700px) {display: none} ;
   &:hover,
