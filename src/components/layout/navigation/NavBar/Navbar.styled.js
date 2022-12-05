@@ -9,7 +9,8 @@ width: 100%;
 height: 80px;
 display: flex;
 flex-direction: column;
-background: white;
+background: transparent;
+backdrop-filter: blur(5px);
 //background-color:transparent; 
 `;
 export const RightContainer = styled.div `
@@ -62,6 +63,7 @@ font-family: ‘Mulish’, sans-serif;
 font-size: 16px;
 text-decoration: none;
 margin: 8px;
+
 &:hover,
 &:focus{
     color: ${colorVariables.rosa};
@@ -95,7 +97,8 @@ export const NavbarExtendedContainer = styled.div `
 display: flex;
 flex-direction: column;
 align-items:center;
-background: white;
+background: ${colorVariables.grisClaro};
+backdrop-filter: blur(10px);
 
 @media (min-width: 700px) {
     display: none;
