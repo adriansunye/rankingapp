@@ -14,7 +14,7 @@ import {
 
 from "./Navbar.styled";
 import CreateApp from "@components/layout/organization/createApp/CreateApp.jsx";
-import Compare from "./../../organization/compare/Compare";
+import Compare from "../../organization/compare/Compare";
 import LogoImg from "../../../../assets/arco.png";
 import { Link } from "react-router-dom";
 /* import IconAdd from "../../../../assets/iconadd.png";
