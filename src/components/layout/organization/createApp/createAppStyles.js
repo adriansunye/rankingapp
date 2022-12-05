@@ -65,11 +65,12 @@ margin: 8px;
 `
 
 export const ButtonAnadir = styled(Button)`
-
+padding:5px;
   background: ${colorVariables.lila};
   border: ${colorVariables.lila};
-  border-radius: 100%;
+  border-radius: 50%;
   color:white;
+
   
   &:hover{
       background: ${colorVariables.rosa};
