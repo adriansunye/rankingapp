@@ -3,9 +3,9 @@ import { PuntuarStyle, EstrellasPuntos } from '@components/layout/organization/e
 
 
 
-const Estrellas = () => {
+const EstrellasValoracion = (props) => {
 
-  const [ rating ] = useState(JSON.parse(localStorage.getItem('clickedItem')).rating) 
+  const [ rating ] = useState(props.rat) 
 
 const rows = []
 
@@ -24,4 +24,4 @@ for(let i = 0; i < 5 ; i++){
   )
 }
 
-export default Estrellas
+export default EstrellasValoracion

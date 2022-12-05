@@ -51,7 +51,7 @@ margin: 8px;
 &:focus{
     color: ${colorVariables.rosa};
 };
-@media (max-width:700px) {display: none} ;
+//@media (max-width:700px) {display: none} ;
 `;
 
 export const NavbarLinkExtended = styled.div` 
@@ -80,17 +80,18 @@ height: 50px;
  font-size:2rem;
  padding:0;
   cursor: pointer;
-  @media (min-width:700px) {display: none} ;
+ /*  @media (min-width:700px) {display: none} ;
   &:hover,
 &:focus{
     color: ${colorVariables.rosa};
 
-};
+}; */
  `;
 export const NavbarExtendedContainer = styled.div `
 display: flex;
 flex-direction: column;
 align-items:center;
+
 
 @media (min-width: 700px) {
     display: none;

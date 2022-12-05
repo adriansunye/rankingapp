@@ -1,7 +1,8 @@
 import styled from "styled-components";
 import { colorVariables } from '@utils/variables'
 
-export const CustomTitle = styled.h1`
+export const CustomTitle = styled.p`
+    display:block;
     letter-spacing: -0.05rem;
     font-family: 'Mulish' !important;
     ${props => props.weight === "bold" ? "font-weight: bold;":null}

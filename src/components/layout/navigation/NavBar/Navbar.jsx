@@ -1,4 +1,3 @@
-
 import React, { useState } from "react";
 import {
   NavbarContainer,
@@ -44,7 +43,7 @@ function NavBar() {
               }}
             >
               {extendNavbar ? <> &#10005; </> : <>&#x2630; </>}
-            </OpenLinksButton>
+            </OpenLinksButton> */}
           </NavbarLinkContainer>
         </RightContainer>
       </NavbarInnerContainer>
