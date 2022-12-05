@@ -31,13 +31,13 @@ const onImageError = (e) => {
                                 >
                                     <CardStyled key={lastSearch[key].app_id}>
                                         <div className="row h-100 align-content-between">
-                                            <div className="col col-sm-auto">
+                                            <div className="col col-sm-auto d-flex align-items-center">
                                                 <img
                                                     src={lastSearch[key].app_icon ? lastSearch[key].app_icon : placeholderImage}
                                                     alt="logo"
                                                     onError={onImageError}
-                                                    style={{height: "101px"}}
-                                                    className="img-fluid p-3 rounded-circle card-img-fix"
+                                                    
+                                                    className="img-fluid p-2 p-sm-3 rounded-circle card-img-fix"
                                                 />
                                             </div>
                                             <div className="col-8 col-sm col-md-7 col-lg">
