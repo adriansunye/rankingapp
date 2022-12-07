@@ -14,7 +14,7 @@ import {
 	NavbarLinkExtended,
 } from './NavBar.styled';
 import CreateApp from '@components/layout/organization/createApp/CreateApp.jsx';
-import Comparar from '../../../../views/Comparar/Comparar';
+
 import LogoImg from '../../../../assets/arco.png';
 import LogoSVG from '@assets/logosSVG/Atomo/logo/arco.svg'
 import { Link } from 'react-router-dom';
@@ -26,7 +26,8 @@ function NavBar() {
   const [extendNavbar, setExtendNavbar] = useState(false);
   return (
     <NavbarContainer className="sticky-top">
-      <NavbarInnerContainer>
+      <Container>
+         <NavbarInnerContainer>
         <Link to="/">
           <LeftContainer>
             {" "}
@@ -38,7 +39,7 @@ function NavBar() {
           <NavbarLinkContainer>
           <NavbarLink>
           <CreateApp />
-            <Link to ="/comparar">{<Comparar/>}</Link> 
+          
           </NavbarLink>
             <OpenLinksButton
               onClick={() => {
@@ -57,7 +58,9 @@ function NavBar() {
             </NavbarLinkExtended>
         </NavbarExtendedContainer>
       )}
+     </Container>
     </NavbarContainer>
+    
   );
 }
 
