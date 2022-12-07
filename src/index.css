@@ -1,5 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&display=swap');
 
+:root{
+  --bs-link-color: #7273DD !important;
+  --bs-primary: #7273DD !important;
+  --bs-link-hover-color:  #7273DD !important;
+}
 
 body {
   margin: 0;
@@ -14,6 +19,8 @@ body {
 @media 
  */
 } 
+
+
 
 code , pre, kbd, samp{
   font-family: 'Mulish', sans-serif !important;
