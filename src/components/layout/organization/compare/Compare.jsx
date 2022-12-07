@@ -57,7 +57,7 @@ function Compare() {
                     </CustomTitle>
                 </Col>
                 
-                <a className="btn btn-primary" href={clickedObject.app_page_link} > Download  </a>
+                <a className="btn btn-secundary" href={clickedObject.app_page_link} > Download  </a>
 
             </Row>
         </div>
