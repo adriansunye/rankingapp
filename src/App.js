@@ -29,8 +29,8 @@ function App() {
     
   return (
     <>
-      {/* <PublicRoute /> */}
-      <Compare/>
+      <PublicRoute />
+      {/* <Compare/> */}
     </>
   );
 }

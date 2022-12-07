@@ -41,14 +41,12 @@ function NavBar() {
 					</LeftContainer>
 				</Link>
 
-  const [extendNavbar, setExtendNavbar] = useState(false);
-  return (
     <NavbarContainer className="sticky-top">
       <NavbarInnerContainer>
         <Link to="/">
           <LeftContainer>
             {" "}
-            <Logo src={LogoImg}></Logo>
+            {/* <Logo src={LogoImg}></Logo> */}
           </LeftContainer>
         </Link>
 
@@ -74,7 +72,7 @@ function NavBar() {
         </NavbarExtendedContainer>
       )}
     </NavbarContainer>
-  );
+  
 				<RightContainer>
 					<NavbarLinkContainer>
 						<NavbarLink>
