@@ -16,9 +16,9 @@ import {ReactComponent as Instagram} from '@assets/logosSVG/imgFooter/Instagram.
 
             <FooterContainer>     
                 
-                <Container>                
-                <FooterStyle className="me-auto justify-content-around flex-nowrap mt-3">
-                    <div className='nav-link '> © ARCO.APPS  2022. <br />We love our users! </div>
+                <Container >                
+                <FooterStyle className="me-auto  flex-nowrap mt-1">
+                    <div className='nav-link me-auto'> © ARCO.APPS  2022. <br />We love our users! </div>
                     
                     <Icons>                    
                         <div className='nav-link'> Síguenos:</div>
