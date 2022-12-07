@@ -4,7 +4,6 @@ import {
 	NavbarContainer,
 	LeftContainer,
 	RightContainer,
-	CenterContainer,
 	NavbarInnerContainer,
 	NavbarExtendedContainer,
 	NavbarLinkContainer,
@@ -15,53 +14,74 @@ import {
 } from './NavBar.styled';
 import CreateApp from '@components/layout/organization/createApp/CreateApp.jsx';
 
-import LogoImg from '../../../../assets/arco.png';
+import Comparar from '../../../../views/Comparar/Comparar';
+
 import LogoSVG from '@assets/logosSVG/Atomo/logo/arco.svg'
 import { Link } from 'react-router-dom';
-/* import IconAdd from "../../../../assets/iconadd.png";
-import IconHome from "../../../../assets/iconhome.png";
- */
+
+
 function NavBar() {
 
-  const [extendNavbar, setExtendNavbar] = useState(false);
-  return (
     <NavbarContainer className="sticky-top">
-      <Container>
-         <NavbarInnerContainer>
+      <NavbarInnerContainer>
         <Link to="/">
           <LeftContainer>
             {" "}
-            <Logo src={LogoImg}></Logo>
+            {/* <Logo src={LogoImg}></Logo> */}
           </LeftContainer>
         </Link>
-      
+
         <RightContainer>
           <NavbarLinkContainer>
-          <NavbarLink>
-          <CreateApp />
-          
-          </NavbarLink>
+          {/* <NavbarLink>  <Link to ="/compare">{Compare}</Link> </NavbarLink> */}
+
             <OpenLinksButton
               onClick={() => {
                 setExtendNavbar((curr) => !curr);
               }}
-            >  
+
+            >
               {extendNavbar ? <> &#10005; </> : <>&#x2630; </>}
-            </OpenLinksButton>
+            </OpenLinksButton> 
           </NavbarLinkContainer>
         </RightContainer>
       </NavbarInnerContainer>
+
+
       {extendNavbar && (
         <NavbarExtendedContainer>
-          <NavbarLinkExtended> 
-            <CreateApp />
-            </NavbarLinkExtended>
+          <CreateApp />
         </NavbarExtendedContainer>
       )}
-     </Container>
     </NavbarContainer>
-    
-  );
+  
+				<RightContainer>
+					<NavbarLinkContainer>
+						<NavbarLink>
+							<CreateApp />
+							<Link to="/comparar">{<Comparar />}</Link>
+						</NavbarLink>
+						<OpenLinksButton
+							onClick={() => {
+								setExtendNavbar((curr) => !curr);
+							}}
+						>
+							{extendNavbar ? <> &#10005; </> : <>&#x2630; </>}
+						</OpenLinksButton>
+					</NavbarLinkContainer>
+				</RightContainer>
+			</NavbarInnerContainer>
+			{extendNavbar && (
+				<NavbarExtendedContainer>
+					<NavbarLinkExtended>
+						<CreateApp />
+					</NavbarLinkExtended>
+				</NavbarExtendedContainer>
+			)}
+      </Container>
+		</NavbarContainer>
+	);
+
 }
 
 export default NavBar;

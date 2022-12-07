@@ -47,6 +47,7 @@ border-radius: 2rem;
 padding: .5rem 2rem;
 font-weight: 600;
 transition: background .2s ease-in-out;
+margin-bottom: 1rem;
 
 &:hover{
     background: ${colorVariables.rosa};
