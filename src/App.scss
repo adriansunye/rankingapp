@@ -18,8 +18,13 @@ a {
         border-color:  $color !important;
     }
 }
-
-
+.swiper-button-next{
+    width: 500px;
+    color: black;
+}
+.swiper-wrapper{
+    display: flex;
+}
 
 .avatar-img-detail{
     border-radius: 60%;
