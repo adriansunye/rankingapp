@@ -18,23 +18,12 @@ import CreateApp from "@components/layout/organization/createApp/CreateApp.jsx";
 import Compare from "../../organization/compare/Compare";
 import LogoImg from "../../../../assets/arco.png";
 import { Link } from "react-router-dom";
-	NavbarContainer,
-	LeftContainer,
-	RightContainer,
-	CenterContainer,
-	NavbarInnerContainer,
-	NavbarExtendedContainer,
-	NavbarLinkContainer,
-	NavbarLink,
-	Logo,
-	OpenLinksButton,
-	NavbarLinkExtended,
-} from './Navbar.styled';
-import CreateApp from '@components/layout/organization/createApp/CreateApp.jsx';
+// import CreateApp from '@components/layout/organization/createApp/CreateApp.jsx';
 import Comparar from '../../../../views/Comparar/Comparar';
-import LogoImg from '../../../../assets/arco.png';
+// import LogoImg from '../../../../assets/arco.png';
 import LogoSVG from '@assets/logosSVG/Atomo/logo/arco.svg'
-import { Link } from 'react-router-dom';
+// import {Link} from 'react-router-dom';
+
 /* import IconAdd from "../../../../assets/iconadd.png";
 import IconHome from "../../../../assets/iconhome.png";
  */
