@@ -1,32 +1,23 @@
 import React, { useState } from 'react';
 import Container from 'react-bootstrap/Container';
 import {
-  NavbarContainer,
-  LeftContainer,
-  RightContainer,
-  NavbarInnerContainer,
-  NavbarExtendedContainer,
-  NavbarLinkContainer,
-  Logo, 
-  NavbarLink,
-  OpenLinksButton,
-  NavbarLinkExtended,
-} 
-
-from "./Navbar.styled";
-import CreateApp from "@components/layout/organization/createApp/CreateApp.jsx";
-import Compare from "../../organization/compare/Compare";
-import LogoImg from "../../../../assets/arco.png";
-import { Link } from "react-router-dom";
-// import CreateApp from '@components/layout/organization/createApp/CreateApp.jsx';
+	NavbarContainer,
+	LeftContainer,
+	RightContainer,
+	NavbarInnerContainer,
+	NavbarExtendedContainer,
+	NavbarLinkContainer,
+	NavbarLink,
+	Logo,
+	OpenLinksButton,
+	NavbarLinkExtended,
+} from './Navbar.styled';
+import CreateApp from '@components/layout/organization/createApp/CreateApp.jsx';
 import Comparar from '../../../../views/Comparar/Comparar';
-// import LogoImg from '../../../../assets/arco.png';
 import LogoSVG from '@assets/logosSVG/Atomo/logo/arco.svg'
-// import {Link} from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
-/* import IconAdd from "../../../../assets/iconadd.png";
-import IconHome from "../../../../assets/iconhome.png";
- */
+
 function NavBar() {
 	const [extendNavbar, setExtendNavbar] = useState(false);
 	return (

@@ -47,6 +47,7 @@ a {
    --bs-btn-hover-border-color: #FD83BC !important;
   }
 
+
 .btn-secundary{ 
     --bs-btn-bg: white !important;
     --bs-btn-border-color:  #FD83BC !important;
@@ -58,3 +59,19 @@ a {
     
   
 }
+
+  @media(min-width: 760px){
+
+      .modal-fullscreen{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+       .modal-content{ 
+        max-width: 500px;
+        height: auto;
+        border-radius: 1.5rem;
+    }
+      }
+    
+  }
+
