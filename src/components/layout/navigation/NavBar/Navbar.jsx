@@ -16,6 +16,10 @@ import CreateApp from "@components/layout/organization/createApp/CreateApp.jsx";
 import Comparar from "../../../../views/Comparar/Comparar";
 import LogoImg from "../../../../assets/arco.png";
 import { Link } from "react-router-dom";
+import SearchBar from "@components/layout/navigation/SearchBar/SearchBar";
+import FilterButtons from "@components/layout/organization/filterButtons/FilterButtons";
+import Footer from "@components/layout/navigation/Footer/Footer";
+
 /* import IconAdd from "../../../../assets/iconadd.png";
 import IconHome from "../../../../assets/iconhome.png";
  */
@@ -36,8 +40,9 @@ function NavBar() {
           <NavbarLinkContainer>
           <NavbarLink>
           <CreateApp />
-            <Link to ="/comparar">{<Comparar/>}</Link> 
           </NavbarLink>
+          <NavbarLink> COMPAPAR </NavbarLink> 
+           {/*      <Link to ="/comparar">{<Comparar/>}</Link>  */}
             <OpenLinksButton
               onClick={() => {
                 setExtendNavbar((curr) => !curr);
@@ -53,6 +58,10 @@ function NavBar() {
           <NavbarLinkExtended> 
             <CreateApp />
             </NavbarLinkExtended>
+            <NavbarLinkExtended> COMPAPAR </NavbarLinkExtended> 
+         
+            <NavbarLinkExtended> <SearchBar/></NavbarLinkExtended> 
+            
         </NavbarExtendedContainer>
       )}
     </NavbarContainer>
