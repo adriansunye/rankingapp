@@ -28,7 +28,7 @@ export const Valoracion = (props) => {
 						<Form.Control as="textarea" rows={3} placeholder={props.comentario} />
 					</Form.Group>
 					<Button type="submit" onClick={props.onHide}>
-						Enviar
+						Enviar valoración
 					</Button>
 				</Form>
 			</Modal.Body>
