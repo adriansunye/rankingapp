@@ -1,63 +1,58 @@
 import React from "react";
-import { Link } from "react-router-dom"
+import { Link } from "react-router-dom";
+import Container from 'react-bootstrap/Container';
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
+import { CustomTitle } from '../appDetailsContent/titles/titlesStyling';
+import Estrellas from '../estrellas/Estrellas.jsx';
+import { useState , useContext} from 'react';
+
 
 function Compare() {
-    const lastSearch = useContext(SearchedObjectContext);
+    // const lastSearch = useContext(SearchedObjectContext);
+    const [clickedObject] = useState(JSON.parse(localStorage.getItem('clickedItem')));
 
-    const placeholderImage =
-    'https://images.unsplash.com/photo-1511285605577-4d62fb50d2f7?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=876&q=80'
-
-const onImageError = (e) => {
-    e.target.src = placeholderImage
-}
+     
     return (
+
         <>
-            <pre>
-                <div className="container mt-5 overflow-auto">
-                    <div className="row g-2" >
-                        {lastSearch.length !== 0
-                            ? Object.entries(lastSearch).map(([key]) =>
-                            <div className="col-md-4">
-                                <Link to={{
-                                    pathname: "/detail:" + lastSearch[key].app_id,
-                                }}
-                                    onClick={() => localStorage.setItem("clickedItem", JSON.stringify(lastSearch[key]))}
-                                >
-                                    <CardStyled key={lastSearch[key].app_id}>
-                                        <div className="d-flex h-100 align-content-center">
-                                            <div className="col-4">
-                                                <img
-                                                    src={lastSearch[key].app_icon ? lastSearch[key].app_icon : placeholderImage}
-                                                    alt="logo"
-                                                    onError={onImageError}
-                                                    style={{height: "101px"}}
-                                                    className="img-fluid p-3 rounded-circle"
-                                                />
-                                            </div>
-                                            <div className="col-8">
-                                                <CardStyled.Body className="row">
-                                                    <div>
-                                                        <CardStyled.Title>{lastSearch[key].app_name}</CardStyled.Title>
-                                                        
-                                                    </div>
-                                                    
-                                                    <div>
-                                                        <span style={{color: "black"}}>{lastSearch[key].rating}</span>
-                                                        <EstrellasPuntos mode="on"></EstrellasPuntos>
-                                                    </div>
-                                                </CardStyled.Body>
-                                            </div>
-                                        </div>
-                                    </CardStyled>
-                                </Link>
-                                </div>
-                            )
-                            : <div className="d-flex align-items-center justify-content-center mt-5">No coincedences found</div>}
-                    </div>
-                </div>
-            </pre>
+        <div className="container">
+        
+            <Row>
+                <Col>
+                    <CustomTitle weight="bold" className="mb-4 mt-0" size="medium">
+                        {clickedObject.app_name}
+                    </CustomTitle>
+                </Col> 
+                <Col className="col-md-4 d-flex">
+                    <img src={clickedObject.app_icon} alt="Logo" className="avatar-img-detail img-fluid" />
+                </Col>   
+
+                {/* <img
+                                                src={searchedObject[key].app_icon ? searchedObject[key].app_icon : placeholderImage}
+                                                alt="logo"
+                                                onError={onImageError}
+                                                className="img-fluid rounded-start"
+                                            /> */}
+
+                <Estrellas />
+                <Col>
+                    <CustomTitle className="mb-0">
+                        {' '}
+                        <strong>Tipo de App:</strong> {clickedObject.type === 0 ? 'Web' : 'Desktop'}{' '}
+                    </CustomTitle>
+
+                    <CustomTitle className="mb-0">
+                        {' '}
+                        <strong>Descargas</strong> {clickedObject.num_downloads }{' '}
+                    </CustomTitle>
+                </Col>
+
+            </Row>
+        </div>
         </>
-    );
+
+        );
 };
 
 export default Compare;

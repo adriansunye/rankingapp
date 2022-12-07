@@ -35,7 +35,7 @@ function NavBar() {
 
         <RightContainer>
           <NavbarLinkContainer>
-          <NavbarLink>  <Link to ="/compare">{Compare}</Link> </NavbarLink>
+          {/* <NavbarLink>  <Link to ="/compare">{Compare}</Link> </NavbarLink> */}
 
             <OpenLinksButton
               onClick={() => {
@@ -43,7 +43,7 @@ function NavBar() {
               }}
             >
               {extendNavbar ? <> &#10005; </> : <>&#x2630; </>}
-            </OpenLinksButton> */}
+            </OpenLinksButton> 
           </NavbarLinkContainer>
         </RightContainer>
       </NavbarInnerContainer>

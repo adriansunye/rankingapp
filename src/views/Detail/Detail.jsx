@@ -1,7 +1,7 @@
 import React from 'react'
 import AppDetailsContent from '@components/layout/organization/appDetailsContent/appDetailsContent'
 import Footer from '@components/layout/navigation/Footer/Footer';
-import NavBar from '@components/layout/navigation/NavBar/Navbar.jsx';
+import NavBar from '@components/layout/navigation/NavBar/NavBar.jsx';
 
 const Detail = () => {
   return (
