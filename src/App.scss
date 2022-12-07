@@ -1,4 +1,6 @@
 @import "~bootstrap/scss/bootstrap";
+
+
 body {
     margin:0;
     padding: 0;
@@ -18,11 +20,44 @@ a {
         border-color:  $color !important;
     }
 }
+.swiper-button-next{
+    width: 500px;
+    color: black;
+}
+.swiper-wrapper{
+    display: flex;
+}
 
-
+.slideImgaeFix{
+    height: 160px;
+    -o-object-fit: cover;
+       object-fit: cover;
+}
 
 .avatar-img-detail{
-    border-radius: 16rem;
+    border-radius: 60%;
     -o-object-fit: fill ;
        object-fit: fill ;
 }
+
+.btn-primary{
+    --bs-btn-bg: #7273DD !important;
+    --bs-btn-border-color: #7273DD !important;
+    --bs-btn-hover-bg: #FD83BC !important;
+   --bs-btn-hover-border-color: #FD83BC !important;
+  }
+
+  @media(min-width: 760px){
+
+      .modal-fullscreen{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+       .modal-content{ 
+        max-width: 500px;
+        height: auto;
+        border-radius: 1.5rem;
+    }
+      }
+    
+  }

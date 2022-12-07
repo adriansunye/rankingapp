@@ -6,7 +6,8 @@ export const AddAppStyled = styled(Button)`
     background-color: ${colorVariables.lila};
     border-color: ${colorVariables.lila};
     border-radius: 50%;
-    scale: 0.65;
+    transition: scale .5s ease-in;
+    
     &:hover{
         background-color: ${colorVariables.lila};
         border-color: ${colorVariables.amarillo};
@@ -14,6 +15,7 @@ export const AddAppStyled = styled(Button)`
         border-color: ${colorVariables.amarillo} !important;
         background-color: ${colorVariables.lila} !important;
         opacity: 80%;
-        scale: 0.70;    
+        scale: 0.70;   
+        transition: scale .5s ease-in; 
     };
 `

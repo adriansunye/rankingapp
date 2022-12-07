@@ -71,6 +71,8 @@ export const CustomParagraph = styled.p`
 		width: 30px;
         transition: all 2s ease-in;
 	}
+
+    @media (max-width: 500px){padding-right:0;}
        
     ` }
 

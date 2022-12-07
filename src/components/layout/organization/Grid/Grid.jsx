@@ -4,12 +4,13 @@ import { SearchedObjectContext } from "@views/Search/Search";
 import { CardStyled } from "@components/layout/organization/Grid/Card/Card"
 import { Link } from "react-router-dom"
 import { EstrellasPuntos } from '@components/layout/organization/estrellas/estrellasStyles.js'
+import Placeholder from '@assets/imganePlaceHolder/Default.png'
 
 function Grid() {
     const lastSearch = useContext(SearchedObjectContext);
 
-    const placeholderImage =
-    'https://images.unsplash.com/photo-1511285605577-4d62fb50d2f7?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=876&q=80'
+    const placeholderImage = Placeholder
+    
 
 const onImageError = (e) => {
     e.target.src = placeholderImage
@@ -31,13 +32,13 @@ const onImageError = (e) => {
                                 >
                                     <CardStyled key={lastSearch[key].app_id}>
                                         <div className="row h-100 align-content-between">
-                                            <div className="col col-sm-auto">
+                                            <div className="col col-sm-auto d-flex align-items-center">
                                                 <img
                                                     src={lastSearch[key].app_icon ? lastSearch[key].app_icon : placeholderImage}
                                                     alt="logo"
                                                     onError={onImageError}
-                                                    style={{height: "101px"}}
-                                                    className="img-fluid p-3 rounded-circle card-img-fix"
+                                                    
+                                                    className="img-fluid p-2 p-sm-3 rounded-circle card-img-fix"
                                                 />
                                             </div>
                                             <div className="col-8 col-sm col-md-7 col-lg">

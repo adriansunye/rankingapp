@@ -5,6 +5,7 @@ import { CustomTitle } from '@components/layout/organization/appDetailsContent/t
 import { CustomParagraph } from '@components/layout/organization/appDetailsContent/paragraph/paragraphStyling.js';
 import { Row, Col } from 'react-bootstrap';
 import { OpinionCard } from './opinionCard/opinionStyles';
+
 /* -----START componente de pop-up valoracion --- */
 import { useState, useEffect } from 'react';
 import Valoracion from '@components/layout/organization/valoracion/Valoracion';
@@ -30,20 +31,31 @@ const AppDetails = () => {
 		}
 	});
 
+	/*//* Start evento del modal de valoración */
 	const handleSubmit = (e) => {
-		e.preventDefault();
-		let ratingValue = '';
+		
+		e.preventDefault(); // elimina el comportamiento por defecto de refrescar la pantalla
+		
+		//! capturar las estrellas votadas
+		let ratingValue = ''; // valor por defecto de la votación
 		for (let i = 0; i < 5; i++) {
-			if (e.target[i].checked) {
-				ratingValue = e.target[i].value;
-				console.log(e.target[i].value);
-			}
+			if (e.target[i].checked) {ratingValue = e.target[i].value;}
 		}
-		let opinion = { user: 'user', opinion: e.target[5].value, rating: `${ratingValue}` };
 
+		//! Capturar el nombre del usuario
+		let userName = e.target[5].value === "" ? "Anónimo" : e.target[5].value;
+
+		//! Objeto opinion que resive los parametro
+		let opinion = { user: `${userName}`, opinion: e.target[6].value, rating: `${ratingValue}` };
 		clickedObject.opinions.push(opinion);
+		
+		//! cambiar el estado de ElementList para que renderice los comentarios
 		setElementList(opinion);
+
+
 	};
+
+//* End evento del modal de valoración
 
 	const handleClick = (e) => {
 		let removeLocalStorage = [];
@@ -69,43 +81,42 @@ const AppDetails = () => {
 					</Col>
 				</Row>
 				<Row>
-					<Col className="d-flex flex-column justify-content-center">
+					<Col className="d-flex flex-column justify-content-center col-8 col-md">
 						{/* Ejecutar modal de valoracion START */}
-						<Button className="bnt-star px-0" onClick={() => setModalShow(true)}>
+						<Button className="bnt-star px-0 " onClick={() => setModalShow(true)}>
 							<Estrellas />
 						</Button>
-						<CustomTitle className="mb-3" weight="light" color="grey">
+						<CustomTitle className="mb-3 fs-4" weight="light" color="grey">
 							Valoraración
 						</CustomTitle>
-						<CustomTitle className="mb-0">
+						<CustomTitle className="mb-0 fs-5">
 							{' '}
 							<strong>Tipo de App:</strong> {clickedObject.type === 0 ? 'Web' : 'Desktop'}{' '}
 						</CustomTitle>
-						<CustomTitle weight="bold" className="mb-4 mt-0" size="medium">
+						<CustomTitle weight="bold" className="mb-4 mt-0 display-2">
 							{clickedObject.app_name}
 						</CustomTitle>
 					</Col>
-					<Col className="col-md-4 d-flex">
-						<img src={clickedObject.app_icon} alt="Logo" className="avatar-img-detail img-fluid" />
+					<Col className="col-md-4 d-flex align-items-center">
+						<img src={clickedObject.app_icon} alt="Logo" className="ms-auto avatar-img-detail img-fluid" />
 					</Col>
 					<Col className="col-12">
 						<h4 className="fw-normal text-muted mb-1">Descripción</h4>
-						<CustomParagraph isDescription className="col-lg-8" size="medium">
+						<CustomParagraph isDescription className="col-lg-6" size="medium">
 							{clickedObject.app_description}
 						</CustomParagraph>
 					</Col>
 				</Row>
-				<CustomTitle className="d-none d-md-block">Opiniones</CustomTitle>
+				<CustomTitle className="d-none d-md-block h3 mb-4">Opiniones</CustomTitle>
 			</div>
 			<div className="container mb-5 pb-1">
 				<Row className="">
-					{clickedObject.opinions.map((item) => (
-						<Col lg={6} className="m-0">
-							<OpinionCard className="mb-2 p-2">
+					{clickedObject.opinions.map((item, index) => (
+						<Col key={`${item.user}-${index}`} lg={6} className="m-0">
+							<OpinionCard className="mb-3 p-4">
+								<CustomTitle className="mt-2 mb-2 h4 fw-semibold">{item.user}</CustomTitle>
 								<EstrellasValoracion rat={item.rating} />
-
-								<CustomTitle>{item.user}</CustomTitle>
-								<CustomParagraph>{item.opinion}</CustomParagraph>
+								<CustomParagraph className="mt-3 fs-5">{item.opinion}</CustomParagraph>
 							</OpinionCard>
 						</Col>
 					))}
@@ -122,7 +133,7 @@ const AppDetails = () => {
 				handleSubmit={handleSubmit}
 			/>
 
-			<DeleteAlert title="Elemento eliminado" show={deleteShow} onHide={() => setDeleteShow(false)} />
+			<DeleteAlert title="La App se ha eliminado" show={deleteShow} onHide={() => setDeleteShow(false)} />
 
 			{/* Ejecutar modal de valoracion END */}
 		</>

@@ -9,4 +9,6 @@ export const CustomTitle = styled.p`
     ${props => props.weight === "light" ? "font-weight: light;":null}
     ${props => props.color === "grey" ?  `color: ${colorVariables.grisOscuro}`:null}
     ${props => props.size === "medium" ? "font-size: 3rem":null}
+
+    
 `
