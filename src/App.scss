@@ -1,4 +1,6 @@
 @import "~bootstrap/scss/bootstrap";
+
+
 body {
     margin:0;
     padding: 0;
@@ -26,8 +28,21 @@ a {
     display: flex;
 }
 
+.slideImgaeFix{
+    height: 160px;
+    -o-object-fit: cover;
+       object-fit: cover;
+}
+
 .avatar-img-detail{
     border-radius: 60%;
     -o-object-fit: fill ;
        object-fit: fill ;
 }
+
+.btn-primary{
+    --bs-btn-bg: #7273DD !important;
+    --bs-btn-border-color: #7273DD !important;
+    --bs-btn-hover-bg: #FD83BC !important;
+   --bs-btn-hover-border-color: #FD83BC !important;
+  }
