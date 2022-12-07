@@ -6,6 +6,8 @@ import Footer from "@components/layout/navigation/Footer/Footer";
 import NavBar from "@components/layout/navigation/NavBar/NavBar";
 import BackgroundLogoPicture from "@assets/arcofondo.png";
 import {BackgroundLogo} from "@components/layout/organization/backgroundLogo/backgroundLogo.js"
+import Slider from "../../components/layout/navigation/AppSlider/AppSlider";
+
 
 
 export const SearchedObjectContext = createContext(null);
@@ -102,6 +104,7 @@ function Search() {
     <>
       <NavBar />
       <BackgroundLogo className="d-none d-xxl-block"src={BackgroundLogoPicture}/>
+      <Slider/>
       <div className="mt-2">
           <SearchBar handleChange={handleChange} />
           <FilterButtons handleClick={handleClick} />

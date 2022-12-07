@@ -32,5 +32,16 @@ overflow: hidden;
   height: 101px;
   object-fit: cover;
 
+
+
 }
+
+@media (max-width: 321px){
+
+    .card-img-fix{
+        width: 90px;
+        height: 90px;
+        }
+  }
+
 `
