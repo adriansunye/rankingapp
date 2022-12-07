@@ -5,14 +5,17 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import { CustomTitle } from '../appDetailsContent/titles/titlesStyling';
 import Estrellas from '../estrellas/Estrellas.jsx';
+
 import { useState } from 'react';
 import Button from 'react-bootstrap/Button';
 import  {ImageStayled } from '../compare/Compare_styled';
 import EstrellasValoracion from '@components/layout/organization/estrellas/EstrellasValoracion.jsx';
 
+
 function Compare() {
     // const lastSearch = useContext(SearchedObjectContext);
     const [clickedObject] = useState(JSON.parse(localStorage.getItem('clickedItem')));
+
     console.log(clickedObject);
 
     // const handleClick = (e) => {
@@ -26,11 +29,13 @@ function Compare() {
 
 
     
+
     return (
 
         <>
         <div className="container">
         
+
             <Row className="text-center">
                 <Col className=" xs={12} sm={6}">
                     <CustomTitle weight="bold" className="mb-4 mt-0" size="medium">
@@ -47,9 +52,11 @@ function Compare() {
 
                 <Col className="text-center" >
                     <CustomTitle className="mb-10">
+
                         {' '}
                         <strong>Tipo de App:</strong> {clickedObject.type === 0 ? 'Web' : 'Desktop'}{' '}
                     </CustomTitle>
+
 
                     <CustomTitle className="mb-20">
                         {' '}
@@ -89,6 +96,7 @@ function Compare() {
                 <a className="btn btn-secundary" href={clickedObject.app_page_link} target="_blank"> Download  </a>
                 </Col>
            
+
             </Row>
         </div>
         </>

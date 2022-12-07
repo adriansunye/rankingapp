@@ -11,26 +11,16 @@ import {
 	Logo,
 	OpenLinksButton,
 	NavbarLinkExtended,
-} from './Navbar.styled';
+} from './NavBar.styled';
 import CreateApp from '@components/layout/organization/createApp/CreateApp.jsx';
+
 import Comparar from '../../../../views/Comparar/Comparar';
+
 import LogoSVG from '@assets/logosSVG/Atomo/logo/arco.svg'
 import { Link } from 'react-router-dom';
 
 
 function NavBar() {
-	const [extendNavbar, setExtendNavbar] = useState(false);
-	return (
-		<NavbarContainer className="sticky-top">
-     < Container>
-			<NavbarInnerContainer>
-				<Link to="/" className='d-flex align-items-center'>
-					<LeftContainer className='align-items-center'>
-						{' '}
-						<Logo src={LogoSVG}></Logo>
-						<p className='ms-2 mb-0 fw-bold fs-5'>ARCO<sub className='d-block mb-2'>App</sub></p>
-					</LeftContainer>
-				</Link>
 
     <NavbarContainer className="sticky-top">
       <NavbarInnerContainer>
@@ -49,6 +39,7 @@ function NavBar() {
               onClick={() => {
                 setExtendNavbar((curr) => !curr);
               }}
+
             >
               {extendNavbar ? <> &#10005; </> : <>&#x2630; </>}
             </OpenLinksButton> 
@@ -90,6 +81,7 @@ function NavBar() {
       </Container>
 		</NavbarContainer>
 	);
+
 }
 
 export default NavBar;

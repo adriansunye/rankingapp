@@ -76,8 +76,8 @@ const AppDetails = () => {
 		<>
 			<div className="container">
 				<Row>
-					<Col className="d-flex justify-content-end">
-						<AddButton image={TrashIcon} handleClick={handleClick} />
+					<Col className="d-flex d-lg-none justify-content-end">
+						<AddButton image={TrashIcon} />
 					</Col>
 				</Row>
 				<Row>
@@ -109,7 +109,7 @@ const AppDetails = () => {
 				</Row>
 				<CustomTitle className="d-none d-md-block h3 mb-4">Opiniones</CustomTitle>
 			</div>
-			<div className="container mb-5 pb-1">
+			<div className="container">
 				<Row className="">
 					{clickedObject.opinions.map((item, index) => (
 						<Col key={`${item.user}-${index}`} lg={6} className="m-0">

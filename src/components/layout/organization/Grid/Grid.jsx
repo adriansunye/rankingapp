@@ -19,7 +19,7 @@ const onImageError = (e) => {
         <>
             <pre>
 
-                <div className="container mt-5 overflow-hidden pb-5">
+                <div className="container mt-5 overflow-hidden">
                     <div className="row g-3" >
 
                         {lastSearch.length !== 0
