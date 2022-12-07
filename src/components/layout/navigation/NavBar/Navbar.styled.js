@@ -25,7 +25,7 @@ flex: 30%;
 display: flex;
 justify-content: flex-end;
 /* padding-left: 30px; */
-margin-top:15px;
+/* margin-top:15px; */
 `;
 export const LeftContainer = styled.div `
 flex: 30%;
@@ -70,7 +70,7 @@ margin: 8px;
 `;
 
 export const Logo = styled.img `
-margin-top:15px;
+/* margin-top:15px; */
 width: auto;
 height: 50px;
 `;
