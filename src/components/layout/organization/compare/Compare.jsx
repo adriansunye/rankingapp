@@ -5,14 +5,23 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import { CustomTitle } from '../appDetailsContent/titles/titlesStyling';
 import Estrellas from '../estrellas/Estrellas.jsx';
-import { useState , useContext} from 'react';
+import { useState } from 'react';
+import Button from 'react-bootstrap/Button';
 
 
 function Compare() {
     // const lastSearch = useContext(SearchedObjectContext);
     const [clickedObject] = useState(JSON.parse(localStorage.getItem('clickedItem')));
+    console.log(clickedObject);
 
-     
+    // const handleClick = (e) => {
+		
+	// 	JSON.parse(localStorage.getItem('data')).filter((obj) => {
+	// 		if (obj.app_page_link !== clickedObject.app_page_link) {
+	// 			.
+	// 		}
+	// 	});
+
     return (
 
         <>
@@ -44,9 +53,11 @@ function Compare() {
 
                     <CustomTitle className="mb-0">
                         {' '}
-                        <strong>Descargas</strong> {clickedObject.num_downloads }{' '}
+                        <strong>Descargas</strong> {clickedObject.num_downloads_exact}{' '}
                     </CustomTitle>
                 </Col>
+                
+                <a className="btn btn-primary" href={clickedObject.app_page_link} > Download  </a>
 
             </Row>
         </div>
