@@ -8,7 +8,8 @@ import "swiper/css";
 import "swiper/css/pagination";
 
 const ButtonStyled = styled(Button)`
-  font-size: 0.8rem;
+  font-size: 1rem;
+  font-weight: bold;
 `
 
 const AppSlider = () => {
@@ -24,7 +25,7 @@ const AppSlider = () => {
   }
 
   return (
-    <div className="container w-50 justify-content-center">
+    <div className="container my-4 justify-content-center">
       <Swiper
         freeMode={true}
         observer={true}
@@ -40,19 +41,19 @@ const AppSlider = () => {
         className="mySwiper"
         breakpoints={{
           0: {
-            slidesPerView: 1,
+            slidesPerView: 2,
             spaceBetween: 10,
           },
           768: {
-            slidesPerView: 3,
-            spaceBetween: 15,
-          },
-          1024: {
             slidesPerView: 4,
             spaceBetween: 15,
           },
-          1280: {
+          1024: {
             slidesPerView: 5,
+            spaceBetween: 15,
+          },
+          1280: {
+            slidesPerView: 6,
             spaceBetween: 30,
           },
         }}

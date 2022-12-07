@@ -33,9 +33,7 @@ const AppSliderCardStyled = styled(Card)`
     color: black;
 }
 `
-const ButtonStyled = styled(Button)`
-  font-size: 0.8rem;
-`
+
 
 const AppSliderCard = (props) => {
 let {imgSrc, name, category, rating, onClick,} = props.data
@@ -43,7 +41,7 @@ let {imgSrc, name, category, rating, onClick,} = props.data
     <>
       <AppSliderCardStyled className="p-0 overflow-hidden h-75 w-100 shadow">    
         <div className="overflow-hidden  rounded p-0">
-          <AppSliderCardStyled.Img variant="top" src={imgSrc}></AppSliderCardStyled.Img>
+          <AppSliderCardStyled.Img className="slideImgaeFix" variant="top" src={imgSrc}></AppSliderCardStyled.Img>
         </div>
         <div className="p-2 d-flex align-items-center justify-content-center">
         <AppSliderCardStyled.Text className="m-0 text-center">{rating}</AppSliderCardStyled.Text>
