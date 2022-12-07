@@ -47,6 +47,19 @@ a {
    --bs-btn-hover-border-color: #FD83BC !important;
   }
 
+
+.btn-secundary{ 
+    --bs-btn-bg: white !important;
+    --bs-btn-border-color:  #FD83BC !important;
+    --bs-btn-border-radius: 15px !important;
+    --bs-btn-hover-bg:#FD83BC !important;
+    --bs-btn-hover-border-color:#7273DD !important;
+    --bs-btn-hover-color: white !important;
+    --bs-btn-color:#FD83BC !important;  
+    
+  
+}
+
   @media(min-width: 760px){
 
       .modal-fullscreen{
@@ -61,3 +74,4 @@ a {
       }
     
   }
+

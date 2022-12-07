@@ -17,6 +17,7 @@ import Comparar from '../../../../views/Comparar/Comparar';
 import LogoSVG from '@assets/logosSVG/Atomo/logo/arco.svg'
 import { Link } from 'react-router-dom';
 
+
 function NavBar() {
 	const [extendNavbar, setExtendNavbar] = useState(false);
 	return (
@@ -31,6 +32,38 @@ function NavBar() {
 					</LeftContainer>
 				</Link>
 
+    <NavbarContainer className="sticky-top">
+      <NavbarInnerContainer>
+        <Link to="/">
+          <LeftContainer>
+            {" "}
+            {/* <Logo src={LogoImg}></Logo> */}
+          </LeftContainer>
+        </Link>
+
+        <RightContainer>
+          <NavbarLinkContainer>
+          {/* <NavbarLink>  <Link to ="/compare">{Compare}</Link> </NavbarLink> */}
+
+            <OpenLinksButton
+              onClick={() => {
+                setExtendNavbar((curr) => !curr);
+              }}
+            >
+              {extendNavbar ? <> &#10005; </> : <>&#x2630; </>}
+            </OpenLinksButton> 
+          </NavbarLinkContainer>
+        </RightContainer>
+      </NavbarInnerContainer>
+
+
+      {extendNavbar && (
+        <NavbarExtendedContainer>
+          <CreateApp />
+        </NavbarExtendedContainer>
+      )}
+    </NavbarContainer>
+  
 				<RightContainer>
 					<NavbarLinkContainer>
 						<NavbarLink>

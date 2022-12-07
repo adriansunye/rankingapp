@@ -3,7 +3,7 @@ import SearchBar from "@components/layout/navigation/SearchBar/SearchBar";
 import Grid from "@components/layout/organization/Grid/Grid";
 import FilterButtons from "@components/layout/organization/filterButtons/FilterButtons";
 import Footer from "@components/layout/navigation/Footer/Footer";
-import NavBar from "@components/layout/navigation/NavBar/Navbar";
+import NavBar from "@components/layout/navigation/NavBar/NavBar";
 import BackgroundLogoPicture from "@assets/arcofondo.png";
 import {BackgroundLogo} from "@components/layout/organization/backgroundLogo/backgroundLogo.js"
 import Slider from "../../components/layout/navigation/AppSlider/AppSlider";
