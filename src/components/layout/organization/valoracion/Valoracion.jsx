@@ -14,9 +14,15 @@ export const Valoracion = (props) => {
 			<Modal.Body>
 				<h2 className="fw-bold">{props.title}</h2>
 				<Form onSubmit={props.handleSubmit}>
-					<Form.Group className="" controlId="ControlEstrellas">
+					<Form.Group className="mb-3" controlId="ControlEstrellas">
 						<RatingStyled NameNew="valorar" /> {/* Estrellas */}
 					</Form.Group>
+
+					<Form.Group className="" controlId="ControlNombre">
+				
+					<Form.Control type="text" placeholder="Nombre" />
+					</Form.Group>
+
 					<Form.Group className="mb-4" controlId="valoracionModal">
 						<Form.Label></Form.Label>
 						<Form.Control as="textarea" rows={3} placeholder={props.comentario} />
