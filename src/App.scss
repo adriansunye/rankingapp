@@ -46,3 +46,18 @@ a {
     --bs-btn-hover-bg: #FD83BC !important;
    --bs-btn-hover-border-color: #FD83BC !important;
   }
+
+  @media(min-width: 760px){
+
+      .modal-fullscreen{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+       .modal-content{ 
+        max-width: 500px;
+        height: auto;
+        border-radius: 1.5rem;
+    }
+      }
+    
+  }
