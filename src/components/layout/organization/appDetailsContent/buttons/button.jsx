@@ -3,7 +3,7 @@ import { AddAppStyled } from "./buttonStyles";
 const addApp = (props) => {
   return (
     <>
-      <AddAppStyled onClick={props.handleClick}>
+      <AddAppStyled>
         <img src={props.image} alt="Plus"></img>
       </AddAppStyled>
     </>
