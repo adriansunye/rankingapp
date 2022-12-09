@@ -1,5 +1,6 @@
 import React from 'react'
 import './App.scss';
+import Compare from './components/layout/organization/compare/Compare';
 
 
 import PublicRoute from '@components/routing/PublicRoute/PublicRoute';
@@ -39,7 +40,7 @@ function App() {
     
   return (
     <>
-      <PublicRoute />
+      <PublicRoute/>
     </>
   );
 }

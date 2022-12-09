@@ -5,7 +5,21 @@ import { Link } from "react-router-dom";
 import { EstrellasPuntos } from "@components/layout/organization/estrellas/estrellasStyles.js";
 
 function Grid() {
-  const lastSearch = useContext(SearchedObjectContext);
+
+    const lastSearch = useContext(SearchedObjectContext);
+
+    const placeholderImage = Placeholder
+    
+
+const onImageError = (e) => {
+    e.target.src = placeholderImage
+}
+    return (
+        <>
+            <pre>
+
+                <div className="container mt-5 overflow-hidden">
+                    <div className="row g-3" >
 
   const placeholderImage =
     "https://images.unsplash.com/photo-1511285605577-4d62fb50d2f7?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=876&q=80";
