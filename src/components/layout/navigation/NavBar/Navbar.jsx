@@ -4,7 +4,6 @@ import {
 	NavbarContainer,
 	LeftContainer,
 	RightContainer,
-	CenterContainer,
 	NavbarInnerContainer,
 	NavbarExtendedContainer,
 	NavbarLinkContainer,
@@ -12,27 +11,50 @@ import {
 	Logo,
 	OpenLinksButton,
 	NavbarLinkExtended,
-} from './Navbar.styled';
+} from './NavBar.styled';
 import CreateApp from '@components/layout/organization/createApp/CreateApp.jsx';
-import Comparar from '../../../../views/Comparar/Comparar';
-import LogoImg from '../../../../assets/arco.png';
-import { Link } from 'react-router-dom';
-/* import IconAdd from "../../../../assets/iconadd.png";
-import IconHome from "../../../../assets/iconhome.png";
- */
-function NavBar() {
-	const [extendNavbar, setExtendNavbar] = useState(false);
-	return (
-		<NavbarContainer className="sticky-top">
-     < Container>
-			<NavbarInnerContainer>
-				<Link to="/">
-					<LeftContainer>
-						{' '}
-						<Logo src={LogoImg}></Logo>
-					</LeftContainer>
-				</Link>
 
+import Comparar from '../../../../views/Comparar/Comparar';
+
+import LogoSVG from '@assets/logosSVG/Atomo/logo/arco.svg'
+import { Link } from 'react-router-dom';
+
+
+function NavBar() {
+
+    <NavbarContainer className="sticky-top">
+      <NavbarInnerContainer>
+        <Link to="/">
+          <LeftContainer>
+            {" "}
+            {/* <Logo src={LogoImg}></Logo> */}
+          </LeftContainer>
+        </Link>
+
+        <RightContainer>
+          <NavbarLinkContainer>
+          {/* <NavbarLink>  <Link to ="/compare">{Compare}</Link> </NavbarLink> */}
+
+            <OpenLinksButton
+              onClick={() => {
+                setExtendNavbar((curr) => !curr);
+              }}
+
+            >
+              {extendNavbar ? <> &#10005; </> : <>&#x2630; </>}
+            </OpenLinksButton> 
+          </NavbarLinkContainer>
+        </RightContainer>
+      </NavbarInnerContainer>
+
+
+      {extendNavbar && (
+        <NavbarExtendedContainer>
+          <CreateApp />
+        </NavbarExtendedContainer>
+      )}
+    </NavbarContainer>
+  
 				<RightContainer>
 					<NavbarLinkContainer>
 						<NavbarLink>
@@ -59,6 +81,7 @@ function NavBar() {
       </Container>
 		</NavbarContainer>
 	);
+
 }
 
 export default NavBar;

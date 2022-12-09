@@ -3,9 +3,11 @@ import SearchBar from "@components/layout/navigation/SearchBar/SearchBar";
 import Grid from "@components/layout/organization/Grid/Grid";
 import FilterButtons from "@components/layout/organization/filterButtons/FilterButtons";
 import Footer from "@components/layout/navigation/Footer/Footer";
-import NavBar from "@components/layout/navigation/NavBar/Navbar";
+import NavBar from "@components/layout/navigation/NavBar/NavBar";
 import BackgroundLogoPicture from "@assets/arcofondo.png";
 import {BackgroundLogo} from "@components/layout/organization/backgroundLogo/backgroundLogo.js"
+import Slider from "../../components/layout/navigation/AppSlider/AppSlider";
+
 
 
 export const SearchedObjectContext = createContext(null);
@@ -56,6 +58,7 @@ function Search() {
   const filtro = (id) => {
     let arrayFiltro = [];
     let device = [];
+    let intermedio = [];
     JSON.parse(localStorage.getItem("data")).filter((obj) => {
       if (
         obj.app_name.toLowerCase().includes(searchString.toLowerCase()) ||
@@ -69,10 +72,20 @@ function Search() {
     });
     switch (id) {
       case "mejores":
-        arrayFiltro.sort((a, b) => (a.rating < b.rating ? 1 : -1)).splice(12);
-        return arrayFiltro;
-      case "peores":
         arrayFiltro.sort((a, b) => (a.rating > b.rating ? 1 : -1)).splice(12);
+        return arrayFiltro;
+        case "intermedios":
+          intermedio= [];
+          Object.entries(arrayFiltro).map(([key]) =>
+            arrayFiltro[key].rating === 3 ? intermedio.push(arrayFiltro[key]) : null
+          );
+  
+          intermedio.sort((a, b) => (a.rating > b.rating ? 1 : -1)).splice(12);
+          return intermedio;
+
+
+      case "peores":
+        arrayFiltro.sort((a, b) => (a.rating < b.rating ? 1 : -1)).splice(12);
         return arrayFiltro;
       case "web":
         device = [];
@@ -80,7 +93,7 @@ function Search() {
           arrayFiltro[key].type === 0 ? device.push(arrayFiltro[key]) : null
         );
 
-        device.sort((a, b) => (a.rating < b.rating ? 1 : -1)).splice(12);
+        device.sort((a, b) => (a.rating > b.rating ? 1 : -1)).splice(12);
         return device;
       case "desktop":
         device = [];
@@ -88,7 +101,7 @@ function Search() {
           arrayFiltro[key].type === 1 ? device.push(arrayFiltro[key]) : null
         );
 
-        device.sort((a, b) => (a.rating < b.rating ? 1 : -1)).splice(12);
+        device.sort((a, b) => (a.rating > b.rating ? 1 : -1)).splice(12);
         return device;
       default:
     }
@@ -102,6 +115,7 @@ function Search() {
     <>
       <NavBar />
       <BackgroundLogo className="d-none d-xxl-block"src={BackgroundLogoPicture}/>
+      <Slider/>
       <div className="mt-2">
           <SearchBar handleChange={handleChange} />
           <FilterButtons handleClick={handleClick} />
