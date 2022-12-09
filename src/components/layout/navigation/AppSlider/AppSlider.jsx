@@ -14,12 +14,12 @@ const ButtonStyled = styled(Button)`
 
 const AppSlider = () => {
   let data = JSON.parse(localStorage.getItem("data")).sort((a, b) =>
-    a.rating < b.rating ? 1 : -1
+    a.avgRating < b.avgRating ? 1 : -1
   );
 
-  const highRatedObjects = [];
+   const highRatedObjects = [];
   for (let key in data) {
-    if (data[key].rating > 3) {
+    if (data[key].avgRating > 3) {
       highRatedObjects.push(data[key]);
     }
   }
@@ -65,7 +65,7 @@ const AppSlider = () => {
                   imgSrc: obj.app_icon,
                   name: obj.app_name,
                   category: obj.app_category,
-                  rating: obj.rating
+                  rating: obj.avgRating
                 }}
               >
                 <Link to={{pathname: "/detail:" + highRatedObjects[key].app_id}}>
