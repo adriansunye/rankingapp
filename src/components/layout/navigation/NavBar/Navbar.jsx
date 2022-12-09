@@ -13,7 +13,6 @@ import {
 	NavbarLinkExtended,
 } from './Navbar.styled';
 import CreateApp from '@components/layout/organization/createApp/CreateApp.jsx';
-import Comparar from '../../../../views/Comparar/Comparar';
 import LogoSVG from '@assets/logosSVG/Atomo/logo/arco.svg'
 import { Link } from 'react-router-dom';
 
@@ -35,7 +34,7 @@ function NavBar() {
 					<NavbarLinkContainer>
 						<NavbarLink>
 							<CreateApp />
-							<Link to="/comparar">{<Comparar />}</Link>
+							<Link to="/compare">Comparar</Link>
 						</NavbarLink>
 						<OpenLinksButton
 							onClick={() => {

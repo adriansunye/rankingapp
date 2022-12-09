@@ -62,6 +62,7 @@ function Search() {
     let arrayFiltro = [];
     let device = [];
 
+    let intermedio = [];
     JSON.parse(localStorage.getItem("data")).forEach((obj) => {
       if (
         obj.app_name.toLowerCase().includes(searchString.toLowerCase()) ||
@@ -77,6 +78,16 @@ function Search() {
       case "mejores":
         arrayFiltro.sort((a, b) => (a.rating < b.rating ? 1 : -1)).splice(12);
         return arrayFiltro;
+        case "intermedios":
+          intermedio= [];
+          Object.entries(arrayFiltro).map(([key]) =>
+            arrayFiltro[key].rating === 3 ? intermedio.push(arrayFiltro[key]) : null
+          );
+  
+          intermedio.sort((a, b) => (a.rating > b.rating ? 1 : -1)).splice(12);
+          return intermedio;
+
+
       case "peores":
         arrayFiltro.sort((a, b) => (a.rating > b.rating ? 1 : -1)).splice(12);
         return arrayFiltro;
@@ -86,7 +97,7 @@ function Search() {
           arrayFiltro[key].type === 0 ? device.push(arrayFiltro[key]) : null
         );
 
-        device.sort((a, b) => (a.rating < b.rating ? 1 : -1)).splice(12);
+        device.sort((a, b) => (a.rating > b.rating ? 1 : -1)).splice(12);
         return device;
       case "desktop":
         device = [];
@@ -94,7 +105,7 @@ function Search() {
           arrayFiltro[key].type === 1 ? device.push(arrayFiltro[key]) : null
         );
 
-        device.sort((a, b) => (a.rating < b.rating ? 1 : -1)).splice(12);
+        device.sort((a, b) => (a.rating > b.rating ? 1 : -1)).splice(12);
         return device;
       default:
     }

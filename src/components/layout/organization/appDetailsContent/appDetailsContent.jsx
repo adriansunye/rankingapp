@@ -13,6 +13,7 @@ import DeleteAlert from '@components/layout/organization/DeleteAlert/DeleteAlert
 import Button from 'react-bootstrap/Button';
 import Estrellas from '@components/layout/organization/estrellas/Estrellas.jsx';
 import EstrellasValoracion from '@components/layout/organization/estrellas/EstrellasValoracion.jsx';
+import { Link } from 'react-router-dom';
 /* -----END componente de pop-up valoracion --- */
 
 const AppDetails = () => {
@@ -83,7 +84,7 @@ const AppDetails = () => {
 			<div className="container">
 				<Row>
 					<Col className="d-flex justify-content-end">
-						<AddButton image={TrashIcon} handleClick={handleClick} />
+						<AddButton handleClick={handleClick} image={TrashIcon} />
 					</Col>
 				</Row>
 				<Row>
@@ -115,7 +116,7 @@ const AppDetails = () => {
 				</Row>
 				<CustomTitle className="d-none d-md-block h3 mb-4">Opiniones</CustomTitle>
 			</div>
-			<div className="container mb-5 pb-1">
+			<div className="container">
 				<Row className="">
 					{clickedObject.opinions.map((item, index) => (
 						<Col key={`${item.user}-${index}`} lg={6} className="m-0">
