@@ -1,4 +1,4 @@
-import FilterButton from "@components/layout/organization/filterButtons/filterButton/FilterButton.jsx";
+import FilterButton from "@components/layout/organization/filterButtons/FilterButton/FilterButton.jsx";
 
 const FilterButtons = ({handleClick}) => {
   return (
