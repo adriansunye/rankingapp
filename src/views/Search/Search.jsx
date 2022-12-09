@@ -8,15 +8,16 @@ import BackgroundLogoPicture from "@assets/arcofondo.png";
 import {BackgroundLogo} from "@components/layout/organization/backgroundLogo/backgroundLogo.js"
 import Slider from "../../components/layout/navigation/AppSlider/AppSlider";
 
-
-
 export const SearchedObjectContext = createContext(null);
 
 function Search() {
+
   const [searchedObject, setSearchedObject] = useState([]);
   const [searchString, setSearchString] = useState("");
+
   useEffect(() => {
     localStorage.setItem("userSearch", JSON.stringify(searchString));
+
     if (searchString.length === 0) {
       setSearchedObject(
         JSON.parse(localStorage.getItem("data")).sort((a, b) =>
@@ -25,10 +26,11 @@ function Search() {
       );
       localStorage.setItem("lastSearch", JSON.stringify(searchedObject));
     } else {
+
       const searchedObjects = [];
 
       /* Filtering the data and pushing the filtered data to searchedObjects. */
-      JSON.parse(localStorage.getItem("data")).filter((obj) => {
+      JSON.parse(localStorage.getItem("data")).forEach((obj) => {
         if (
           obj.app_name.toLowerCase().includes(searchString.toLowerCase()) ||
           obj.app_description
@@ -56,9 +58,11 @@ function Search() {
   };
 
   const filtro = (id) => {
+
     let arrayFiltro = [];
     let device = [];
-    JSON.parse(localStorage.getItem("data")).filter((obj) => {
+
+    JSON.parse(localStorage.getItem("data")).forEach((obj) => {
       if (
         obj.app_name.toLowerCase().includes(searchString.toLowerCase()) ||
         obj.app_description
@@ -95,6 +99,7 @@ function Search() {
       default:
     }
   };
+
   const handleClick = (event) => {
     setSearchedObject(filtro(event.target.id));
   };

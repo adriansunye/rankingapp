@@ -1,6 +1,4 @@
 import styled,{ keyframes} from "styled-components";
-import { colorVariables } from '@utils/variables'
-
 
 const rotate = keyframes`
 
@@ -12,8 +10,6 @@ from {
   }
 
 `
-
-
 export const BackgroundLogo = styled.img`
 position: fixed;
 top: -150px;

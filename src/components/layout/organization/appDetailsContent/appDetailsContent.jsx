@@ -25,6 +25,7 @@ const AppDetails = () => {
 		let updateLocalStorage = JSON.parse(localStorage.getItem('data'));
 
 		if (elementList != null) {
+			
 			updateLocalStorage.map((objt) => (objt.app_id === clickedObject.app_id ? objt.opinions.push(elementList) : objt));
 
 			localStorage.setItem('data', JSON.stringify(updateLocalStorage));
@@ -52,25 +53,30 @@ const AppDetails = () => {
 		//! cambiar el estado de ElementList para que renderice los comentarios
 		setElementList(opinion);
 
-
 	};
 
 //* End evento del modal de valoración
 
+//* START Evento para eliminar una APP */
 	const handleClick = (e) => {
+
 		let removeLocalStorage = [];
 
-		console.log(removeLocalStorage);
-		JSON.parse(localStorage.getItem('data')).filter((obj) => {
-			if (obj.app_id !== clickedObject.app_id) {
+		//! Obtener un Array nuevo sin el objeto a eliminar
+		JSON.parse(localStorage.getItem('data')).forEach((obj) => {
+			if ( obj.app_id !== clickedObject.app_id ) {
 				removeLocalStorage.push(obj);
 			}
 		});
 
+		//! Remplazar la base de datos en localStorage por el nuevo Array
 		localStorage.setItem('data', JSON.stringify(removeLocalStorage));
 
+		//! Mostrar la alerta de que se ha eliminado la APP
 		setDeleteShow(true);
 	};
+//* END Evento para eliminar una APP */
+
 
 	return (
 		<>

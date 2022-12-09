@@ -1,10 +1,9 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState } from 'react'
 import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
 import Form from 'react-bootstrap/Form';
 import { ModalCrearAPP } from "@components/layout/organization/createApp/createAppStyles.js"
 import {ButtonAnadir} from "@components/layout/organization/createApp/createAppStyles.js"
-import { ReactComponent as uploadImg } from '@assets/icons/uploadImg.svg'
 import Opinions from "@store/opinions/opinions"
 import Placeholder from '@assets/imganePlaceHolder/Default.png'
 
@@ -16,8 +15,6 @@ const CreateApp = () => {
 
     const handleSubmit = (e) => {
       e.preventDefault();
-
-      console.log(e.target[0])
 
       let newApp = {
         app_id: "com." + e.target[0].value, 
@@ -31,7 +28,8 @@ const CreateApp = () => {
       }
       
       let updateLocalStorage = [];
-      JSON.parse(localStorage.getItem("data")).map(obj => {
+
+      JSON.parse(localStorage.getItem("data")).forEach(obj => {
           updateLocalStorage.push(obj)
       })
 
@@ -61,10 +59,7 @@ const CreateApp = () => {
           <Modal.Title>Crear APP</Modal.Title>
         </Modal.Header>
         <Modal.Body>
-
-
       <Form onSubmit={event => handleSubmit(event)}>
-
         <Form.Group  className="mb-3" controlId="formBasicNombre">
           <Form.Label >Nombre de la App:</Form.Label>
           <Form.Control   type="text" placeholder="Escribe el nombre de tu app" name = "app_name"   />

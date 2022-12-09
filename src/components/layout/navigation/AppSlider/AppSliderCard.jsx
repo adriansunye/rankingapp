@@ -1,5 +1,4 @@
 import React from "react";
-import Button from 'react-bootstrap/Button';
 import Card from "react-bootstrap/Card";
 import styled from "styled-components";
 import { EstrellasPuntos } from '@components/layout/organization/estrellas/estrellasStyles.js'
@@ -36,7 +35,7 @@ const AppSliderCardStyled = styled(Card)`
 
 
 const AppSliderCard = (props) => {
-let {imgSrc, name, category, rating, onClick,} = props.data
+let {imgSrc, name, category, rating} = props.data
   return (
     <>
       <AppSliderCardStyled className="p-0 overflow-hidden h-75 w-100 shadow">    
