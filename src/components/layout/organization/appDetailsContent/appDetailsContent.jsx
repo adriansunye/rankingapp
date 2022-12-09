@@ -5,6 +5,7 @@ import { CustomTitle } from '@components/layout/organization/appDetailsContent/t
 import { CustomParagraph } from '@components/layout/organization/appDetailsContent/paragraph/paragraphStyling.js';
 import { Row, Col } from 'react-bootstrap';
 import { OpinionCard } from './opinionCard/opinionStyles';
+
 /* -----START componente de pop-up valoracion --- */
 import { useState, useEffect } from 'react';
 import Valoracion from '@components/layout/organization/valoracion/Valoracion';
@@ -12,6 +13,7 @@ import DeleteAlert from '@components/layout/organization/DeleteAlert/DeleteAlert
 import Button from 'react-bootstrap/Button';
 import Estrellas from '@components/layout/organization/estrellas/Estrellas.jsx';
 import EstrellasValoracion from '@components/layout/organization/estrellas/EstrellasValoracion.jsx';
+import { Link } from 'react-router-dom';
 /* -----END componente de pop-up valoracion --- */
 
 const AppDetails = () => {
@@ -30,25 +32,35 @@ const AppDetails = () => {
 		}
 	});
 
+	/*//* Start evento del modal de valoración */
 	const handleSubmit = (e) => {
-		e.preventDefault();
-		let ratingValue = '';
+		
+		e.preventDefault(); // elimina el comportamiento por defecto de refrescar la pantalla
+		
+		//! capturar las estrellas votadas
+		let ratingValue = ''; // valor por defecto de la votación
 		for (let i = 0; i < 5; i++) {
-			if (e.target[i].checked) {
-				ratingValue = e.target[i].value;
-				console.log(e.target[i].value);
-			}
+			if (e.target[i].checked) {ratingValue = e.target[i].value;}
 		}
-		let opinion = { user: 'user', opinion: e.target[5].value, rating: `${ratingValue}` };
 
+		//! Capturar el nombre del usuario
+		let userName = e.target[5].value === "" ? "Anónimo" : e.target[5].value;
+
+		//! Objeto opinion que resive los parametro
+		let opinion = { user: `${userName}`, opinion: e.target[6].value, rating: `${ratingValue}` };
 		clickedObject.opinions.push(opinion);
+		
+		//! cambiar el estado de ElementList para que renderice los comentarios
 		setElementList(opinion);
+
+
 	};
+
+//* End evento del modal de valoración
 
 	const handleClick = (e) => {
 		let removeLocalStorage = [];
 
-		console.log(removeLocalStorage);
 		JSON.parse(localStorage.getItem('data')).filter((obj) => {
 			if (obj.app_id !== clickedObject.app_id) {
 				removeLocalStorage.push(obj);
@@ -65,7 +77,7 @@ const AppDetails = () => {
 			<div className="container">
 				<Row>
 					<Col className="d-flex justify-content-end">
-						<AddButton image={TrashIcon} handleClick={handleClick} />
+						<AddButton handleClick={handleClick} image={TrashIcon} />
 					</Col>
 				</Row>
 				<Row>
@@ -97,7 +109,7 @@ const AppDetails = () => {
 				</Row>
 				<CustomTitle className="d-none d-md-block h3 mb-4">Opiniones</CustomTitle>
 			</div>
-			<div className="container mb-5 pb-1">
+			<div className="container">
 				<Row className="">
 					{clickedObject.opinions.map((item, index) => (
 						<Col key={`${item.user}-${index}`} lg={6} className="m-0">
@@ -121,7 +133,7 @@ const AppDetails = () => {
 				handleSubmit={handleSubmit}
 			/>
 
-			<DeleteAlert title="Elemento eliminado" show={deleteShow} onHide={() => setDeleteShow(false)} />
+			<DeleteAlert title="La App se ha eliminado" show={deleteShow} onHide={() => setDeleteShow(false)} />
 
 			{/* Ejecutar modal de valoracion END */}
 		</>

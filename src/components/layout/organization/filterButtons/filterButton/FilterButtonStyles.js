@@ -6,6 +6,7 @@ export const FilterButtonStyled = styled(Button)`
     color: black;
     border-color: ${colorVariables.lila};
     background: transparent;
+    font-weight: 600;
     width: 7rem;
     height: 2.5rem;
     &:hover{
@@ -19,5 +20,13 @@ export const FilterButtonStyled = styled(Button)`
         color: white;
     }&:active{
         scale: 1.05;
-    };
+    }
+    
+    @media( max-width: 320px){
+
+        width: 4.5rem;
+        font-size: .78rem;
+    }
+    
+    ;
 `

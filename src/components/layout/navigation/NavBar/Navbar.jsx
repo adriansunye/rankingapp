@@ -4,7 +4,6 @@ import {
 	NavbarContainer,
 	LeftContainer,
 	RightContainer,
-	CenterContainer,
 	NavbarInnerContainer,
 	NavbarExtendedContainer,
 	NavbarLinkContainer,
@@ -14,21 +13,20 @@ import {
 	NavbarLinkExtended,
 } from './Navbar.styled';
 import CreateApp from '@components/layout/organization/createApp/CreateApp.jsx';
-import LogoImg from '../../../../assets/arco.png';
+import LogoSVG from '@assets/logosSVG/Atomo/logo/arco.svg'
 import { Link } from 'react-router-dom';
-/* import IconAdd from "../../../../assets/iconadd.png";
-import IconHome from "../../../../assets/iconhome.png";
- */
+
 function NavBar() {
 	const [extendNavbar, setExtendNavbar] = useState(false);
 	return (
 		<NavbarContainer className="sticky-top">
      < Container>
 			<NavbarInnerContainer>
-				<Link to="/">
-					<LeftContainer>
+				<Link to="/" className='d-flex align-items-center'>
+					<LeftContainer className='align-items-center'>
 						{' '}
-						<Logo src={LogoImg}></Logo>
+						<Logo src={LogoSVG}></Logo>
+						<p className='ms-2 mb-0 fw-bold fs-5'>ARCO<sub className='d-block mb-2'>App</sub></p>
 					</LeftContainer>
 				</Link>
 
