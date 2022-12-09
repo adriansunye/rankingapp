@@ -1,12 +1,12 @@
 import React from 'react'
 import AppDetailsContent from '@components/layout/organization/appDetailsContent/appDetailsContent'
 import Footer from '@components/layout/navigation/Footer/Footer';
-import NavBar from '@components/layout/navigation/NavBar/Navbar';
+import NavBar from '@components/layout/navigation/NavBar/Navbar.jsx';
 
 const Detail = () => {
   return (
     <>
-      <NavBar />
+      <NavBar className="fixed-top"/>
       <AppDetailsContent />
       <Footer />
     </>

@@ -14,14 +14,14 @@ import {ReactComponent as Instagram} from '@assets/logosSVG/imgFooter/Instagram.
     function Footer() {
         return (
 
-            <FooterContainer className="fixed-bottom">     
+            <FooterContainer className='fixed-bottom'>     
                 
-                <Container>                
-                <FooterStyle className="me-auto justify-content-around flex-nowrap">
-                    <div className='nav-link '> © ARCO.APPS  2022. <br />We love our users! </div>
+                <Container >                
+                <FooterStyle className="me-auto  flex-nowrap mt-1">
+                    <div className='nav-link me-auto'> © ARCO.APPS  2022. <br />We love our users! </div>
                     
                     <Icons>                    
-                        <div className='nav-link'> Follow Us:</div>
+                        <div className='nav-link'> Síguenos:</div>
                         <Nav.Link href="https://twitter.com/" target="_blank"> <Twitter/></Nav.Link>
                         <Nav.Link href="https://www.facebook.com/" target="_blank"> <Facebook/> </Nav.Link>
                         <Nav.Link href="https://www.instagram.com/" target="_blank"> <Instagram/> </Nav.Link>

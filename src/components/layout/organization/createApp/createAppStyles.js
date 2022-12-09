@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import { colorVariables } from '@utils/variables.js'
-import addApp from '@assets/icons/addApp.svg'
 import Modal from 'react-bootstrap/Modal';
+import Button from 'react-bootstrap/Button';
 
 
 export const ModalCrearAPP = styled(Modal)`
@@ -52,6 +52,27 @@ transition: background .2s ease-in-out;
     background: ${colorVariables.rosa};
     border: ${colorVariables.rosa}
 }
-
 }
 `
+export const AnadirApp = styled.img `
+color: ${colorVariables.lila};
+
+margin: 8px;
+&:hover,
+&:focus{
+    color: ${colorVariables.rosa};
+};
+`
+
+export const ButtonAnadir = styled(Button)`
+padding:5px;
+  background: ${colorVariables.lila};
+  border: ${colorVariables.lila};
+  border-radius: 50%;
+  color:white;
+
+  
+  &:hover{
+      background: ${colorVariables.rosa};
+      border: ${colorVariables.rosa}
+  }`

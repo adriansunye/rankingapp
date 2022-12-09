@@ -11,12 +11,9 @@ export const FooterStyle = styled(Nav)`
             display: flex;
             align-items: center;
             justify-content: space-between;
-            flex-wrap: nowrap!important;
-            
-    & nav {
-        display: flex;
-        flex-wrap: nowrap!important;
-    }
+            padding: 0.5rem;
+            font-size: 0.9rem;
+            height: 52px;
 
 }
 `
@@ -30,7 +27,11 @@ export const Icons = styled.div `
 export const FooterContainer = styled.footer`
 
     background: ${colorVariables.lila};
-    justify-content: space-between;
+    height: 52px;
         
 
 `
+
+
+
+

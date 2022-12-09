@@ -3,6 +3,9 @@ body {
     margin:0;
     padding: 0;
 }
+a {
+    text-decoration: none !important;
+}
 .bnt-star{
     $color: transparent;
     background-color: $color;
@@ -14,4 +17,12 @@ body {
         background-color: $color !important;
         border-color:  $color !important;
     }
+}
+
+
+
+.avatar-img-detail{
+    border-radius: 60%;
+    -o-object-fit: fill ;
+       object-fit: fill ;
 }
