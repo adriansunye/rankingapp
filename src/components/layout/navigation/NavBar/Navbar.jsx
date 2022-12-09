@@ -37,7 +37,7 @@ function NavBar() {
 					<NavbarLinkContainer>
 						<NavbarLink>
 							<CreateApp />
-							<Link to="/comparar">{<Comparar />}</Link>
+							<Link to="/compare">Comparar</Link>
 						</NavbarLink>
 						<OpenLinksButton
 							onClick={() => {

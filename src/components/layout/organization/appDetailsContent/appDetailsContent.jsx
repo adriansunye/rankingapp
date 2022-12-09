@@ -12,6 +12,7 @@ import DeleteAlert from '@components/layout/organization/DeleteAlert/DeleteAlert
 import Button from 'react-bootstrap/Button';
 import Estrellas from '@components/layout/organization/estrellas/Estrellas.jsx';
 import EstrellasValoracion from '@components/layout/organization/estrellas/EstrellasValoracion.jsx';
+import { Link } from 'react-router-dom';
 /* -----END componente de pop-up valoracion --- */
 
 const AppDetails = () => {
@@ -97,6 +98,9 @@ const AppDetails = () => {
 				</Row>
 				<CustomTitle className="d-none d-md-block h3 mb-4">Opiniones</CustomTitle>
 			</div>
+			<Link to={{
+                                pathname: "/compare:" + clickedObject.app_id,
+                                }}><button>comparar</button></Link>
 			<div className="container mb-5 pb-1">
 				<Row className="">
 					{clickedObject.opinions.map((item, index) => (
