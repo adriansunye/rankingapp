@@ -13,6 +13,7 @@ import DeleteAlert from '@components/layout/organization/DeleteAlert/DeleteAlert
 import Button from 'react-bootstrap/Button';
 import Estrellas from '@components/layout/organization/estrellas/Estrellas.jsx';
 import EstrellasValoracion from '@components/layout/organization/estrellas/EstrellasValoracion.jsx';
+import { Link } from 'react-router-dom';
 /* -----END componente de pop-up valoracion --- */
 
 const AppDetails = () => {
