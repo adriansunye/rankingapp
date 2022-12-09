@@ -72,12 +72,12 @@ const Comparar = () => {
               </div>
 
               <Col className="text-center  "  >
-                <CustomTitle className="mb-10">
+                <CustomTitle className="mb-1">
                   {' '}
                   <strong>Tipo de App:</strong> {toCompare.type === 0 ? 'Web' : 'Desktop'}{' '}
                 </CustomTitle>
 
-                <CustomTitle className="mb-20">
+                <CustomTitle className="mb-1">
                   {' '}
                   <strong>Descargas</strong> {toCompare.num_downloads_exact}{' '}
                 </CustomTitle>
@@ -86,7 +86,7 @@ const Comparar = () => {
               <a className="btn btn-secundary" href={toCompare.app_page_link} target="_blank"> Download  </a>
             </Col>
 
-          </Col> : <div> Sin busqueda </div>}
+          </Col> : <Col className="mt-3 text-center"> <CustomTitle> <strong>Sin busqueda </strong></CustomTitle> </Col>}
 
           {compared ?
           <Col className="text-center">
@@ -106,12 +106,12 @@ const Comparar = () => {
               </div>
 
               <Col className="text-center  "  >
-                <CustomTitle className="mb-10">
+                <CustomTitle className="mb-1">
                   {' '}
                   <strong>Tipo de App:</strong> {compared.type === 0 ? 'Web' : 'Desktop'}{' '}
                 </CustomTitle>
 
-                <CustomTitle className="mb-20">
+                <CustomTitle className="mb-1">
                   {' '}
                   <strong>Descargas</strong> {compared.num_downloads_exact}{' '}
                 </CustomTitle>
@@ -120,7 +120,7 @@ const Comparar = () => {
               <a className="btn btn-secundary" href={compared.app_page_link} target="_blank"> Download  </a>
             </Col>
 
-          </Col> : <div> Sin busqueda </div>}
+          </Col> : <Col className="mt-3 text-center"> <CustomTitle> <strong>Sin busqueda </strong></CustomTitle> </Col>}
         </Row>
       </div>
       <Footer />
