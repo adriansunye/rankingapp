@@ -93,7 +93,7 @@ function Search() {
           arrayFiltro[key].type === 0 ? device.push(arrayFiltro[key]) : null
         );
 
-        device.sort((a, b) => (a.rating > b.rating ? 1 : -1)).splice(12);
+        device.sort((a, b) => (a.rating < b.rating ? 1 : -1)).splice(12);
         return device;
       case "desktop":
         device = [];
@@ -101,7 +101,7 @@ function Search() {
           arrayFiltro[key].type === 1 ? device.push(arrayFiltro[key]) : null
         );
 
-        device.sort((a, b) => (a.rating > b.rating ? 1 : -1)).splice(12);
+        device.sort((a, b) => (a.rating < b.rating ? 1 : -1)).splice(12);
         return device;
       default:
     }

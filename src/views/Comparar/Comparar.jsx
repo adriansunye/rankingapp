@@ -2,34 +2,22 @@ import React from 'react';
 import { useState, useEffect } from 'react';
 import Footer from '@components/layout/navigation/Footer/Footer';
 import NavBar from '@components/layout/navigation/NavBar/Navbar.jsx';
-import SearchBar from "@components/layout/navigation/SearchBar/SearchBar";
-import { CardStyled } from "@components/layout/organization/Grid/Card/Card"
-import { EstrellasPuntos } from '@components/layout/organization/estrellas/estrellasStyles.js'
 import { Row, Col } from 'react-bootstrap';
-import Compare from "@components/layout/organization/compare/Compare"
-import { Link } from "react-router-dom";
 import { CustomTitle } from '@components/layout/organization/appDetailsContent/titles/titlesStyling';
 import { ImageStayled } from '@components/layout/organization/compare/Compare_styled';
 import EstrellasValoracion from '@components/layout/organization/estrellas/EstrellasValoracion.jsx';
-
-
 
 const Comparar = () => {
   const [data] = useState(JSON.parse(localStorage.getItem('data')));
   const [toCompare, setToCompare] = useState();
   const [compared, setCompared] = useState();
 
-
-
-
   const handleChange = (event) => {
-
     data.forEach((obj) => {
       if (obj.app_name.toLowerCase() === event.target.value.toLowerCase()) {
         event.target.id === "toCompareSelect" ? setToCompare(obj) : setCompared(obj)
       }
     });
-
   };
 
   return (
