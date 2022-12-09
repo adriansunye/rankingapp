@@ -98,9 +98,6 @@ const AppDetails = () => {
 				</Row>
 				<CustomTitle className="d-none d-md-block h3 mb-4">Opiniones</CustomTitle>
 			</div>
-			<Link to={{
-                                pathname: "/compare:" + clickedObject.app_id,
-                                }}><button>comparar</button></Link>
 			<div className="container mb-5 pb-1">
 				<Row className="">
 					{clickedObject.opinions.map((item, index) => (
