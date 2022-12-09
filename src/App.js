@@ -1,5 +1,6 @@
 import React from 'react'
 import './App.scss';
+import Compare from './components/layout/organization/compare/Compare';
 
 
 import PublicRoute from '@components/routing/PublicRoute/PublicRoute';
@@ -15,12 +16,23 @@ import Opinions from "@store/opinions/opinions"
 
 function App() {
 
-  const [data] = useState(Apps.data.apps);
+  const [data] = useState(Apps.data.apps || []);
   if (!localStorage.getItem("data")) {
-    console.log(data)
     for (const obj of data) {
       obj.opinions = Opinions;
       obj.type = Math.floor(Math.random() * 3);
+      if (obj.reviews_per_rating) {
+        const a = obj.reviews_per_rating["1"];
+        const b = obj.reviews_per_rating["2"];
+        const c = obj.reviews_per_rating["3"];
+        const d = obj.reviews_per_rating["4"];
+        const e = obj.reviews_per_rating["5"];
+      
+        const R = a + b + c + d + e;
+      
+        const AR = (1 * a + 2 * b + 3 * c + 4 * d + 5 * e) / R;
+        obj.avgRating = AR.toFixed(2)
+      }
     }
     localStorage.setItem("data", JSON.stringify(data))
   }
@@ -28,7 +40,7 @@ function App() {
     
   return (
     <>
-      <PublicRoute />
+      <PublicRoute/>
     </>
   );
 }

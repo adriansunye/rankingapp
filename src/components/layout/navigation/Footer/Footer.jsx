@@ -14,7 +14,7 @@ import {ReactComponent as Instagram} from '@assets/logosSVG/imgFooter/Instagram.
     function Footer() {
         return (
 
-            <FooterContainer className='fixed-bottom'>     
+            <FooterContainer className="fixed-bottom">     
                 
                 <Container >                
                 <FooterStyle className="me-auto  flex-nowrap mt-1">
